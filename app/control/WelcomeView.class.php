@@ -21,17 +21,29 @@ class WelcomeView extends TPage
     {
         parent::__construct();
         
-        TPage::include_css('app/resources/styles.css');
-        $this->html = new THtmlRenderer('app/resources/wellcome.html');
-
-        // define replacements for the main section
-        $replace = array();
+         /*
+ text: 'Dessert (100g serving)',
+ align: 'left',
+ sortable: false,
+ value: 'name'
+*/
+            
+        $header = ["nome","cpf","rg"];
         
-        // replace the main section variables
-        $this->html->enableSection('main', $replace);
+            
+       $datatable = new HDataTable('DataTable',$header);
+
+
+       $datatable->addProps(['text'=>'Nome','value'=>'nome','align'=> 'left']);
+       $datatable->addProps(['text'=>'CPF','value'=>'cpf','sortable'=> false]);
+       $datatable->addProps(['text'=>'RG','value'=>'rg','sortable'=> false]);
+
+       $datatable->addItem(['nome'=>'Alexandre','cpf'=>'08080890898080','rg'=>'shdsdhskdhskds']);
+       $datatable->addItem(['nome'=>'Rodrigo','cpf'=>'08080890898080','rg'=>'shdsdhskdhskds']);
+       $datatable->addItem(['nome'=>'Evadro','cpf'=>'08080890898080','rg'=>'shdsdhskdhskds']);
         
         // add the template to the page
-        parent::add($this->html);
+        parent::add($datatable);
     }
 }
 ?>
