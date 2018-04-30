@@ -253,3 +253,7 @@ input[widget="tslider"] {
 input[widget="tfile"], input[widget="tmultifile"] {
     padding-top: 0;
 }
+
+.dialog{
+    background-color: white;
+}
