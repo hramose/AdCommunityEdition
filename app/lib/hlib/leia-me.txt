@@ -1,7 +1,3 @@
-# AdCommunityEdition
-- [Grupo facebook](https://www.facebook.com/groups/adframework)
-- [Grupo Google!](https://plus.google.com/communities/10142970538467959139)
-
 Hlibs para Adianti - Rodrigo Moglia (moglia@interatia.com) - Fernando Pasqueto - Alexandre InDevWeb
 Cansados de experar por atualizações estamos fazendo algumas atualizações para comportar necessidades
 que surgiram ao longo do desenvolvimento de alguns projetos.
@@ -16,8 +12,6 @@ Caso queira usar os métodos Back de HCoreApplication e da HWindow
 É necessário modificar o index.php e engine.php na raíz do framework.
 
 index.php  //Adcionar esta linha no código próximo a linha 42
-
-~~~ php
 
 if ($class)
 {
@@ -34,24 +28,16 @@ if( isset($programs[$class]) OR $public )
     parent::run($debug);
 }
 
-~~~
 
-# HWindow
+HWindow
 
-~~~ php
 //Determina uma ação a ser executada ao clicar no botão fechar
 parent::closeAction($class, $method = NULL, $parameters = NULL, $callback = NULL, $type='load')
 
 //Volta até 4 níveis apartir do ultimo controler aberto
 closeBack($level=1, $type='load', $extra_param=array())
 
-~~~ 
-
-# HCoreApplication
-
-~~~ php
-
-
+HCoreApplication
 
 //Retorna um objeto tipo TActionLink com o nível a retornar desejado
 HCoreApplication::linkBack($value, $level=1, $extra_param=array(), $color = null, $size = null, $decoration = null, $icon = null)
@@ -65,13 +51,7 @@ HCoreApplication::gotoBack($level=1,$extra_param=array())
 //Carrega para uma determinado controller presente no histórico de acordo com o elemento de nível informado até 4 níveis
 HCoreApplication::loadBack($level=1,$extra_param=array()) 
 
-~~~ 
-
-
-
-# HRepository - funções de agregação adcionais para TRepository
-
-~~~ php
+HRepository - funções de agregação adcionais para TRepository
 
 TTransaction::open(conexao.ini);
 $repository = new HRepository('Model');
@@ -97,19 +77,14 @@ $count $repository->countOnce(TCriteria $criteria = NULL,$resetProperties=TRUE,$
 
 TTransaction::close();
 
-~~~
 
+HPanelGroup
 
-# HPanelGroup
-
-~~~ php
 HPanelGroup::($title = NULL, $background = NULL, $color = NULL) //parametros de cor de fundo e fonte
 
-~~~
 
-## Funções de formatação comuns (menos código no grid)
+Funções de formatação comuns (menos código no grid)
 
-~~~ php
 $coluna->setTransformer([HDateFormat::class, 'date2br']); ou 
 HDateFormat::date2us($valor) // formata data novamente para ser armazenada
  
@@ -119,25 +94,19 @@ HDateTimeFormat::datetime2us($valor) // formata data novamente para ser armazena
 $coluna->setTransformer([HMoneyFormat::class, 'reais']); oi
 HMoneyFormat::numeric($valor) // formata o número novamente para ser armazenado
 
-~~~
 
+HDebug Depuração Simples
 
-# HDebug Depuração Simples
-
-~~~ php
 HDebug::debug($var,'titulo'); //retorna o valor como dialog
 HDebug::raw($var,'titulo'); //retorna o valor bruto
 HDebug::box($var,'titulo'); //retorna o valor dentro de uma textarea
 
-~~~
 
-
-# HPageNavigation
+HPageNavigation
 
 Exatamente igual a TPageNavigation em todos os aspectos entretanto ao instanciar um objeto da classe passando um nome no construtor permitirá colocar mais de uma paginação / grid na tela
 mantendo o estado dos outros objetos via get e a paginação intacta nos outros paginadores independente.
 
-~~~ php
 $this->navegacao_nome = new HPageNavigation('nome');
 
 //Use o método prepareParameters para receber somente os parametros de seu grid específico
@@ -153,5 +122,3 @@ $botao = new HClipboardButton('botao');
 $botao->setData('Texto a ser copiado para o clipboard');
 $botao->setLabel('Copiar');
 $botao->setImage('fa:copy green');
-
-~~~ 
