@@ -70,7 +70,7 @@ class LoginForm extends TPage
         
         $h3 = new TElement('h1');
         $h3->style = 'text-align:center;';
-        $h3->add('Exames Sistema');
+        $h3->add('Login');
         
         $wrapper->add($h3);
         $wrapper->add($this->form);
