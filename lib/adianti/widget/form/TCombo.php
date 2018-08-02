@@ -202,7 +202,7 @@ class TCombo extends TField implements AdiantiWidgetInterface
      */
     public static function reload($formname, $name, $items, $startEmpty = FALSE)
     {
-        $code = "tcombo_clear('{$formname}', '{$name}'); ";
+        $code = "tcombo_clear('{$formname}', '{$name}', false); ";
         if ($startEmpty)
         {
             $code .= "tcombo_add_option('{$formname}', '{$name}', '', ''); ";
@@ -252,9 +252,10 @@ class TCombo extends TField implements AdiantiWidgetInterface
      * @param $form_name Form name
      * @param $field Field name
      */
-    public static function clearField($form_name, $field)
+    public static function clearField($form_name, $field, $fire_events = TRUE)
     {
-        TScript::create( " tcombo_clear('{$form_name}', '{$field}'); " );
+        $fire_param = $fire_events ? 'true' : 'false';
+        TScript::create( " tcombo_clear('{$form_name}', '{$field}', $fire_param); " );
     }
     
     /**
@@ -301,15 +302,16 @@ class TCombo extends TField implements AdiantiWidgetInterface
                     // creates an <option> tag
                     $option = new TElement('option');
                     $option->{'value'} = $chave;  // define the index
-                    $option->add($item);      // add the item label
+                    $option->add(htmlspecialchars($item)); // add the item label
                     
                     if (substr($chave, 0, 3) == '###')
                     {
                         $option->{'disabled'} = '1';
                         $option->{'class'} = 'disabled';
                     }
+                    
                     // verify if this option is selected
-                    if (($chave == $this->value) AND ($this->value !== NULL))
+                    if (($chave == $this->value) AND !(is_null($this->value)) AND strlen((string) $this->value) > 0)
                     {
                         // mark as selected
                         $option->{'selected'} = 1;
@@ -341,13 +343,16 @@ class TCombo extends TField implements AdiantiWidgetInterface
             $this->tag->{'id'} = $this->id;
         }
         
-        if (strstr($this->size, '%') !== FALSE)
+        if (!empty($this->size))
         {
-            $this->setProperty('style', "width:{$this->size};", false); //aggregate style info
-        }
-        else
-        {
-            $this->setProperty('style', "width:{$this->size}px;", false); //aggregate style info
+            if (strstr($this->size, '%') !== FALSE)
+            {
+                $this->setProperty('style', "width:{$this->size};", false); //aggregate style info
+            }
+            else
+            {
+                $this->setProperty('style', "width:{$this->size}px;", false); //aggregate style info
+            }
         }
         
         if (isset($this->changeAction))

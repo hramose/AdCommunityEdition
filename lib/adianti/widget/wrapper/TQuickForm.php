@@ -219,7 +219,7 @@ class TQuickForm extends TForm
             $object->addValidation($label_value, $validator);
         }
         
-        $this->inputRows[] = array($label_field, array($object), $validator instanceof TRequiredValidator);
+        $this->inputRows[] = array($label_field, array($object), $validator instanceof TRequiredValidator, $row);
         $this->fieldPositions ++;
         return $row;
     }
@@ -273,7 +273,7 @@ class TQuickForm extends TForm
         
         $this->fieldPositions ++;
         
-        $this->inputRows[] = array($label_field, $objects, $required);
+        $this->inputRows[] = array($label_field, $objects, $required, $row);
         return $row;
     }
     

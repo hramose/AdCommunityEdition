@@ -38,8 +38,8 @@ class TFieldList extends TTable
     public function __construct()
     {
         parent::__construct();
-        $this->id     = 'tfieldlist_' . mt_rand(1000000000, 1999999999);
-        $this->class  = 'tfieldlist';
+        $this->{'id'}     = 'tfieldlist_' . mt_rand(1000000000, 1999999999);
+        $this->{'class'}  = 'tfieldlist';
         
         $this->fields = [];
         $this->body_created = false;
@@ -146,7 +146,8 @@ class TFieldList extends TTable
             {
                 if ($field instanceof THidden)
                 {
-                    $row->addCell( '' );
+                    $cell = $row->addCell( '' );
+                    $cell->{'style'} = 'display:none';
                 }
                 else
                 {
@@ -199,7 +200,12 @@ class TFieldList extends TTable
                 $clone->setId($name.'_'.$uniqid);
                 $clone->{'data-row'} = $this->detail_row;
                 
-                $row->addCell( $clone );
+                $cell = $row->addCell( $clone );
+                
+                if ($clone instanceof THidden)
+                {
+                    $cell->{'style'} = 'display:none';
+                }
                 
                 if (!empty($item->$name) OR (isset($item->$name) AND $item->$name == '0'))
                 {
@@ -242,7 +248,11 @@ class TFieldList extends TTable
         {
             foreach ($this->fields as $field)
             {
-                $row->addCell('');
+                $cell = $row->addCell('');
+                if ($field instanceof THidden)
+                {
+                    $cell->{'style'} = 'display:none';
+                }
             }
         }
         
@@ -259,12 +269,13 @@ class TFieldList extends TTable
     public function show()
     {
         parent::show();
+        $id = $this->{'id'};
         
         if ($this->sorting)
         {
             if (empty($this->sort_action))
             {
-                TScript::create("ttable_sortable_rows('{$this->id}', '.handle')");
+                TScript::create("ttable_sortable_rows('{$id}', '.handle')");
             }
             else
             {
@@ -275,7 +286,7 @@ class TFieldList extends TTable
                     $form_name   = $first_field->getFormName();
                     $string_action = $this->sort_action->serialize(FALSE);
                     $sort_action = "function() { __adianti_post_data('{$form_name}', '{$string_action}'); }";
-                    TScript::create("ttable_sortable_rows('{$this->id}', '.handle', $sort_action)");
+                    TScript::create("ttable_sortable_rows('{$id}', '.handle', $sort_action)");
                 }
             }
         }

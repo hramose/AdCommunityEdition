@@ -376,7 +376,11 @@ abstract class TRecord
             foreach ($matches[0] as $match)
             {
                 $property = substr($match, 1, -1);
-                $value    = $this->$property;
+                if (substr($property, 0, 1) == '$')
+                {
+                    $property = substr($property, 1);
+                }
+                $value = $this->$property;
                 if ($cast)
                 {
                     settype($value, $cast);
@@ -424,6 +428,21 @@ abstract class TRecord
     public function getAttributes()
     {
         return $this->attributes;
+    }
+    
+    /**
+     * Get attribute list
+     */
+    public function getAttributeList()
+    {
+        if (count($this->attributes) > 0)
+        {
+            $attributes = $this->attributes;
+            $attributes[] = $this->getPrimaryKey();
+            return implode(',', $attributes);
+        }
+        
+        return '*';
     }
     
     /**
@@ -705,25 +724,20 @@ abstract class TRecord
             // if there's a result
             if ($result)
             {
-                if (method_exists($this, 'onAfterLoad'))
+                $activeClass = get_class($this);
+                $fetched_object = $result-> fetchObject();
+                if ($fetched_object)
                 {
-                    $fetched_object = $result-> fetchObject();
-                    if ($fetched_object)
+                    if (method_exists($this, 'onAfterLoad'))
                     {
                         $this->onAfterLoad($fetched_object);
-                        $activeClass = get_class($this);
-                        $object = new $activeClass;
-                        $object->fromArray( (array) $fetched_object );
                     }
-                    else
-                    {
-                        $object = NULL;
-                    }
+                    $object = new $activeClass;
+                    $object->fromArray( (array) $fetched_object );
                 }
                 else
                 {
-                    // returns the data as an object of this class
-                    $object = $result-> fetchObject(get_class($this));
+                    $object = NULL;
                 }
                 
                 if ($object)
@@ -1079,6 +1093,17 @@ abstract class TRecord
     }
     
     /**
+     * Returns the first object
+     */
+    public static function first()
+    {
+        $object = new static;
+        $id = $object->getFirstID();
+        
+        return self::find($id);
+    }
+    
+    /**
      * Find a Active Record and returns it
      * @return The Active Record itself or NULL when not found
      */
@@ -1127,14 +1152,10 @@ abstract class TRecord
         {
             foreach ($objects as $object)
             {
-                if (isset($object->$valueColumn))
-                {
-                    $indexedArray[ $object->$indexColumn ] = $object->$valueColumn;
-                }
-                else
-                {
-                    $indexedArray[ $object->$indexColumn ] = $object->render($valueColumn);
-                }
+                $key = (isset($object->$indexColumn)) ? $object->$indexColumn : $object->render($indexColumn);
+                $val = (isset($object->$valueColumn)) ? $object->$valueColumn : $object->render($valueColumn);
+                
+                $indexedArray[ $key ] = $val;
             }
         }
         
@@ -1143,6 +1164,17 @@ abstract class TRecord
             asort($indexedArray);
         }
         return $indexedArray;
+    }
+    
+    /**
+     * Creates a Repository with filter
+     * @returns the TRepository object with a filter
+     */
+    public static function select()
+    {
+        $class = get_called_class(); // get the Active Record class name
+        $repository = new TRepository( $class ); // create the repository
+        return $repository->select( func_get_args() );
     }
     
     /**

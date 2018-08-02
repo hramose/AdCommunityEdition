@@ -26,9 +26,9 @@ class TTreeView extends TElement
      */
     public function __construct()
     {
+        parent::__construct('ul');
         $this->{'id'} = 'ttreeview_'.mt_rand(1000000000, 1999999999);
         $this->collapsed = FALSE;
-        parent::__construct('ul');
     }
     
     /**

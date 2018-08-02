@@ -97,6 +97,7 @@ class AdiantiClassMap
         $classPath['TComboCombined']             = 'lib/adianti/widget/form/TComboCombined.php';
         $classPath['TDate']                      = 'lib/adianti/widget/form/TDate.php';
         $classPath['TDateTime']                  = 'lib/adianti/widget/form/TDateTime.php';
+        $classPath['TTime']                      = 'lib/adianti/widget/form/TTime.php';
         $classPath['TEntry']                     = 'lib/adianti/widget/form/TEntry.php';
         $classPath['TNumeric']                   = 'lib/adianti/widget/form/TNumeric.php';
         $classPath['TField']                     = 'lib/adianti/widget/form/TField.php';

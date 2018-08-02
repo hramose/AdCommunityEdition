@@ -9,7 +9,7 @@ use Adianti\Widget\Form\TEntry;
 use DateTime;
 
 /**
- * DatTimePicker Widget
+ * DateTimePicker Widget
  *
  * @version    5.0
  * @package    widget
@@ -39,6 +39,8 @@ class TDateTime extends TEntry implements AdiantiWidgetInterface
         $this->dbmask = null;
         $this->options = [];
         
+        $this->setOption('fontAwesome', true);
+        
         $newmask = $this->mask;
         $newmask = str_replace('dd',   '99',   $newmask);
         $newmask = str_replace('hh',   '99',   $newmask);
@@ -46,6 +48,7 @@ class TDateTime extends TEntry implements AdiantiWidgetInterface
         $newmask = str_replace('mm',   '99',   $newmask);
         $newmask = str_replace('yyyy', '9999', $newmask);
         parent::setMask($newmask);
+        $this->tag->{'widget'} = 'tdatetime';
     }
     
     /**

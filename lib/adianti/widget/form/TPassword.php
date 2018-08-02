@@ -60,13 +60,17 @@ class TPassword extends TField implements AdiantiWidgetInterface
         $this->tag-> name  =  $this->name;   // tag name
         $this->tag-> value =  $this->value;  // tag value
         $this->tag-> type  =  'password';    // input type
-        if (strstr($this->size, '%') !== FALSE)
+        
+        if (!empty($this->size))
         {
-            $this->setProperty('style', "width:{$this->size};", FALSE); //aggregate style info
-        }
-        else
-        {
-            $this->setProperty('style', "width:{$this->size}px;", FALSE); //aggregate style info
+            if (strstr($this->size, '%') !== FALSE)
+            {
+                $this->setProperty('style', "width:{$this->size};", FALSE); //aggregate style info
+            }
+            else
+            {
+                $this->setProperty('style', "width:{$this->size}px;", FALSE); //aggregate style info
+            }
         }
         
         // verify if the field is not editable

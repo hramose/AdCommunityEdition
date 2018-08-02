@@ -1,7 +1,11 @@
 <?php
 /**
- * Write tables in HTML
- * @author Pablo Dall'Oglio
+ * HTML Table writer
+ *
+ * @version    5.0
+ * @author     Pablo Dall'Oglio
+ * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
+ * @license    http://www.adianti.com.br/framework-license
  */
 class TTableWriterHTML implements ITableWriter
 {
@@ -47,17 +51,17 @@ class TTableWriterHTML implements ITableWriter
      * @param @fontcolor font color
      * @param @fillcolor fill color
      */
-    public function addStyle($stylename, $fontface, $fontsize, $fontstyle, $fontcolor, $fillcolor)
+    public function addStyle($stylename, $fontface, $fontsize, $fontstyle, $fontcolor, $fillcolor, $border = null)
     {
         // cria um novo estilo
         $style = new TAdiantiStyle($stylename); 
         $style->font_family      = $fontface;
         $style->color            = $fontcolor;
         $style->background_color = $fillcolor;
-        $style->border_top       = "1px solid #000000";
-        $style->border_bottom    = "1px solid #000000";
-        $style->border_left      = "1px solid #000000";
-        $style->border_right     = "1px solid #000000";
+        $style->border_top       = (is_null($border) OR strpos($border, 'T') !== false) ? "1px solid #000000" : '';
+        $style->border_bottom    = (is_null($border) OR strpos($border, 'B') !== false) ? "1px solid #000000" : '';
+        $style->border_left      = (is_null($border) OR strpos($border, 'L') !== false) ? "1px solid #000000" : '';
+        $style->border_right     = (is_null($border) OR strpos($border, 'R') !== false) ? "1px solid #000000" : '';
         $style->font_size        = "{$fontsize}pt";
         // verifica se o estilo deve ser negrito
         if (strstr($fontstyle, 'B'))

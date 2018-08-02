@@ -91,7 +91,7 @@ class TDBMultiSearch extends TMultiSearch
         $this->model = $model;
         $this->key = $key;
         $this->column = $value;
-        $this->operator = 'like';
+        $this->operator = null;
         $this->orderColumn = isset($orderColumn) ? $orderColumn : NULL;
         $this->criteria = $criteria;
         $this->mask = '{'.$value.'}';
@@ -229,7 +229,13 @@ class TDBMultiSearch extends TMultiSearch
     public function show()
     {
         // define the tag properties
-        $this->tag->{'id'}  = $this->id;    // tag name
+        $this->tag->{'id'}    = $this->id; // tag id
+        
+        if (empty($this->tag->{'name'})) // may be defined by child classes
+        {
+            $this->tag->{'name'}  = $this->name.'[]';  // tag name
+        }
+        
         if (strstr($this->size, '%') !== FALSE)
         {
             $this->setProperty('style', "width:{$this->size};", false); //aggregate style info

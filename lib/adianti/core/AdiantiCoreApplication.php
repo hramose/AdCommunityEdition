@@ -127,6 +127,21 @@ class AdiantiCoreApplication
     }
     
     /**
+     * Process request and insert the result it into template
+     */
+    public static function processRequest($template)
+    {
+        ob_start();
+        AdiantiCoreApplication::run();
+        $content = ob_get_contents();
+        ob_end_clean();
+        
+        $template = str_replace('{content}', $content, $template);
+        
+        return $template;
+    }
+     
+    /**
      * Goto a page
      *
      * @param $class class name
@@ -202,11 +217,11 @@ class AdiantiCoreApplication
         
         if (strpos($query, '?') !== FALSE)
         {
-            return $query . ( count($parameters)>0 ? '&'.http_build_query($parameters) : '' );
+            return $query . ( (is_array($parameters) && count($parameters)>0) ? '&'.http_build_query($parameters) : '' );
         }
         else
         {
-            return $query . ( count($parameters)>0 ? '?'.http_build_query($parameters) : '' );
+            return $query . ( (is_array($parameters) && count($parameters)>0) ? '?'.http_build_query($parameters) : '' );
         }
     }
     

@@ -27,6 +27,7 @@ class TStyle
     public function __construct($name)
     {
         $this->name = $name;
+        $this->properties = array();
     }
     
     /**

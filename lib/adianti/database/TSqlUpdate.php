@@ -44,8 +44,17 @@ final class TSqlUpdate extends TSqlStatement
         // store just scalar values (string, integer, ...)
         if (is_scalar($value))
         {
+            if (substr(strtoupper($value),0,7) == '(SELECT')
+            {
+                $result = $value;
+            }
+            // if the value must not be escaped (NOESC in front)
+            else if (substr($value,0,6) == 'NOESC:')
+            {
+                $result = substr($value,6);
+            }
             // if is a string
-            if (is_string($value) and (!empty($value)))
+            else if (is_string($value) and (!empty($value)))
             {
                 if ($prepared)
                 {

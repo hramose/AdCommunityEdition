@@ -1,27 +1,53 @@
 <?php
 require_once 'init.php';
-$theme = 'theme1';
+$theme  = $ini['general']['theme'];
+$class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';
+$public = in_array($class, $ini['permission']['public_classes']);
 new TSession;
 
-ob_start();
-$menu = TMenuBar::newFromXML('menu.xml');
-$menu->show();
-$menu_string = ob_get_clean();
+if ( TSession::getValue('logged') )
+{
+    $content     = file_get_contents("app/templates/{$theme}/layout.html");
+    $menu_string = AdiantiMenuBuilder::parse('menu.xml', $theme);
+    $content     = str_replace('{MENU}', $menu_string, $content);
+    
+    if ((TSession::getValue('login') == 'admin') && !empty($ini['general']['token']))
+    {
+        $content = str_replace('{IF-BUILDER}', '', $content);
+        $content = str_replace('{/IF-BUILDER}','', $content);
+    }
+}
+else
+{
+    $content = file_get_contents("app/templates/{$theme}/login.html");
+}
 
-$content  = file_get_contents("app/templates/{$theme}/layout.html");
-//$content  = ApplicationTranslator::translateTemplate($content);
+$content = str_replace('{IF-BUILDER}', '<!--', $content);
+$content = str_replace('{/IF-BUILDER}', '-->', $content);
+$content  = ApplicationTranslator::translateTemplate($content);
 $content  = str_replace('{LIBRARIES}', file_get_contents("app/templates/{$theme}/libraries.html"), $content);
-$content  = str_replace('{class}', isset($_REQUEST['class']) ? $_REQUEST['class'] : '', $content);
+$content  = str_replace('{class}', $class, $content);
 $content  = str_replace('{template}', $theme, $content);
-$content  = str_replace('{MENU}', $menu_string, $content);
+$content  = str_replace('{login}',    TSession::getValue('login'), $content);
+$content  = str_replace('{username}', TSession::getValue('username'), $content);
+$content  = str_replace('{usermail}', TSession::getValue('usermail'), $content);
+$content  = str_replace('{frontpage}', TSession::getValue('frontpage'), $content);
+$content  = str_replace('{query_string}', $_SERVER["QUERY_STRING"], $content);
 $css      = TPage::getLoadedCSS();
 $js       = TPage::getLoadedJS();
 $content  = str_replace('{HEAD}', $css.$js, $content);
 
 echo $content;
 
-if (isset($_REQUEST['class']))
+if (TSession::getValue('logged') OR $public)
 {
-    $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : NULL;
-    AdiantiCoreApplication::loadPage($_REQUEST['class'], $method, $_REQUEST);
+    if ($class)
+    {
+        $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : NULL;
+        AdiantiCoreApplication::loadPage($class, $method, $_REQUEST);
+    }
+}
+else
+{
+    AdiantiCoreApplication::loadPage('LoginForm', '', $_REQUEST);
 }

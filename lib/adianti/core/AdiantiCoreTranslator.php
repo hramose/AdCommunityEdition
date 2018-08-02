@@ -119,6 +119,12 @@ class AdiantiCoreTranslator
         $this->messages['en'][] = 'Constructor';
         $this->messages['en'][] = 'Records';
         $this->messages['en'][] = 'Description';
+        $this->messages['en'][] = 'Error while copying file to ^1';
+        $this->messages['en'][] = 'Permission denied';
+        $this->messages['en'][] = 'Extension not allowed';
+        $this->messages['en'][] = 'Hash error';
+        $this->messages['en'][] = 'Invalid parameter (^1) in ^2';
+        $this->messages['en'][] = 'Warning';
         
         $this->messages['pt'][] = 'Carregando';
         $this->messages['pt'][] = 'Arquivo não encontrado';
@@ -218,6 +224,12 @@ class AdiantiCoreTranslator
         $this->messages['pt'][] = 'Construtor';
         $this->messages['pt'][] = 'Registros';
         $this->messages['pt'][] = 'Descrição';
+        $this->messages['pt'][] = 'Falha ao copiar arquivo para ^1';
+        $this->messages['pt'][] = 'Permissão negada';
+        $this->messages['pt'][] = 'Extensão não permitida';
+        $this->messages['pt'][] = 'Erro de hash';
+        $this->messages['pt'][] = 'Parâmetro (^1) inválido em ^2';
+        $this->messages['pt'][] = 'Atenção';
     }
     
     /**

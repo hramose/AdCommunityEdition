@@ -31,7 +31,6 @@ class TXMLBreadCrumb extends TBreadCrumb
         
         $this->parser = new TMenuParser($xml_file);
         $paths = $this->parser->getPath($controller);
-        
         if (!empty($paths))
         {
             parent::addHome();
@@ -39,8 +38,11 @@ class TXMLBreadCrumb extends TBreadCrumb
             $count = 1;
             foreach ($paths as $path)
             {
-                parent::addItem($path, $count == count($paths));
-                $count++;
+                if (!empty($path))
+                {
+                    parent::addItem($path, $count == count($paths));
+                    $count++;
+                }
             }
         }
         else

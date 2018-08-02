@@ -32,7 +32,6 @@ class AdiantiMultiSearchService
         $ini  = AdiantiApplicationConfig::get();
         $seed = APPLICATION_NAME . ( !empty($ini['general']['seed']) ? $ini['general']['seed'] : 's8dkld83kf73kf094' );
         $hash = md5("{$seed}{$param['database']}{$param['key']}{$param['column']}{$param['model']}");
-        $operator = $param['operator'] ? $param['operator'] : 'like';
         $mask = $param['mask'];
         
         if ($hash == $param['hash'])
@@ -40,7 +39,10 @@ class AdiantiMultiSearchService
             try
             {
                 TTransaction::open($param['database']);
-
+                $info = TTransaction::getDatabaseInfo();
+                $default_op = $info['type'] == 'pgsql' ? 'ilike' : 'like';
+                $operator   = !empty($param['operator']) ? $param['operator'] : $default_op;
+                
                 $repository = new TRepository($param['model']);
                 $criteria = new TCriteria;
                 if ($param['criteria'])

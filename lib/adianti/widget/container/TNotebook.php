@@ -42,6 +42,7 @@ class TNotebook extends TElement
         $this->counter = ++ self::$noteCounter;
         
         // define some default values
+        $this->pages = [];
         $this->width = $width;
         $this->height = $height;
         $this->currentPage = 0;

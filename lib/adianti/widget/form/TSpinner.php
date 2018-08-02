@@ -54,6 +54,11 @@ class TSpinner extends TField implements AdiantiWidgetInterface
         $this->max = $max;
         $this->step = $step;
         
+        if ($step == 0)
+        {
+            throw new Exception(AdiantiCoreTranslator::translate('Invalid parameter (^1) in ^2', $step, 'setRange'));
+        }
+        
         if (is_int($step) AND $this->getValue() % $step !== 0)
         {
             parent::setValue($min);

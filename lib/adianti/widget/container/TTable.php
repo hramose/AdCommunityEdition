@@ -56,7 +56,7 @@ class TTable extends TElement
     public function addRow()
     {
         // creates a new Table Row
-        $row = new TTableRow;
+        $row = new TTableRow( $this->section ? $this->section->getName() : 'tbody');
         
         // add this row to the table element
         if (isset($this->section))
@@ -92,7 +92,7 @@ class TTable extends TElement
                 }
                 else
                 {
-                    $row->addCell($arg);
+                    $row->addCell($arg, ($this->section && $this->section->getName() == 'thead') ? 'th' : 'td');
                 }
             }
         }

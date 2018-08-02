@@ -39,7 +39,7 @@ class TCheckButton extends TField implements AdiantiWidgetInterface
         $this->tag->{'class'} = '';
         
         // compare current value with indexValue
-        if ($this->indexValue == $this->value)
+        if ($this->indexValue == $this->value AND !(is_null($this->value)) AND strlen((string) $this->value) > 0)
         {
             $this->tag->{'checked'} = '1';
         }

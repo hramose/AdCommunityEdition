@@ -78,6 +78,8 @@ final class TTransaction
             // turn OFF the log
             self::$logger[self::$counter] = NULL;
         }
+        
+        return self::$conn[self::$counter];
     }
     
     /**

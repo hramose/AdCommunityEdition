@@ -61,6 +61,7 @@ final class TConnection
         $port  = isset($db['port']) ? $db['port'] : NULL;
         $char  = isset($db['char']) ? $db['char'] : NULL;
         $flow  = isset($db['flow']) ? $db['flow'] : NULL;
+        $fkey  = isset($db['fkey']) ? $db['fkey'] : NULL;
         $type  = strtolower($type);
         
         // each database driver has a different instantiation process
@@ -87,7 +88,10 @@ final class TConnection
                 break;
             case 'sqlite':
                 $conn = new PDO("sqlite:{$name}");
-                $conn->query('PRAGMA foreign_keys = ON'); // referential integrity must be enabled
+                if (is_null($fkey) OR $fkey == '1')
+                {
+                    $conn->query('PRAGMA foreign_keys = ON'); // referential integrity must be enabled
+                }
                 break;
             case 'ibase':
             case 'fbird':
@@ -118,7 +122,14 @@ final class TConnection
             case 'mssql':
                 if (OS == 'WIN')
                 {
-                    $conn = new PDO("sqlsrv:Server={$host};Database={$name}", $user, $pass);
+                    if ($port)
+                    {
+                        $conn = new PDO("sqlsrv:Server={$host},{$port};Database={$name}", $user, $pass);
+                    }
+                    else
+                    {
+                        $conn = new PDO("sqlsrv:Server={$host};Database={$name}", $user, $pass);
+                    }
                 }
                 else
                 {

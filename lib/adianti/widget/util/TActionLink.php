@@ -37,4 +37,12 @@ class TActionLink extends TTextDisplay
         $this->{'href'} = $action->serialize();
         $this->{'generator'} = 'adianti';
     }
+    
+    /**
+     * Add CSS class
+     */
+    public function addStyleClass($class)
+    {
+        $this->{'class'} .= " {$class}";
+    }
 }

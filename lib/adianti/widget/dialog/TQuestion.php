@@ -32,6 +32,16 @@ class TQuestion
         $label_yes    = AdiantiCoreTranslator::translate('Yes');
         $label_no     = AdiantiCoreTranslator::translate('No');
         
+        if ($action_yes && $action_yes->isStatic())
+        {
+            $action_yes->setParameter('static', '1' );
+        }
+        
+        if ($action_no && $action_no->isStatic())
+        {
+            $action_no->setParameter('static', '1' );
+        }
+        
         $title = addslashes($title);
         $message = addslashes($message);
         

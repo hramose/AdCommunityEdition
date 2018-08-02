@@ -19,9 +19,9 @@ class TTableCell extends TElement
      * Class Constructor
      * @param $value  TableCell content
      */
-    public function __construct($value)
+    public function __construct($value, $tag = 'td')
     {
-        parent::__construct('td');
+        parent::__construct($tag);
         parent::add($value);
     }
 }

@@ -124,6 +124,68 @@ class TMenuParser
     }
     
     /**
+     * Append module
+     */
+    public function appendModule($label, $icon, $atend = true)
+    {
+        $xml_doc = new DomDocument;
+        $xml_doc->preserveWhiteSpace = false;
+        $xml_doc->formatOutput = true;
+        $xml_doc->load($this->path);
+        $xml_doc->encoding = 'utf-8';
+        
+        $menu = $xml_doc->getElementsByTagName('menu');
+        $last = $xml_doc->documentElement;
+        $menuitem = $xml_doc->createElement("menuitem");
+        $menuitem->setAttribute('label', $label);
+        
+        if ($atend)
+        {
+            $last->appendChild($menuitem);
+        }
+        else
+        {
+            $last->insertBefore($menuitem, $xml_doc->documentElement->firstChild);
+        }
+        
+        $el_icon = $xml_doc->createElement("icon");
+        $el_icon->nodeValue = str_replace('fa-', 'fa:', $icon);
+        $menuitem->appendChild($el_icon);
+        
+        $el_menu = $xml_doc->createElement("menu");
+        $menuitem->appendChild($el_menu);
+        
+        $xml_doc->save($this->path);
+    }
+    
+    /**
+     * Check if a module exists
+     */
+    public function moduleExists($module)
+    {
+        $xml_doc = new DomDocument;
+        $xml_doc->load($this->path);
+        $xml_doc->encoding = 'utf-8';
+        
+        foreach ($xml_doc->getElementsByTagName('menuitem') as $node)
+        {
+            $node_label = $node->getAttribute('label');
+            foreach ($node->childNodes as $subnode)
+            {
+                if ($subnode instanceof DOMElement)
+                {
+                    if ($subnode->tagName == 'menu' and $node_label == $module)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
      * append page
      */
     public function appendPage($module, $label, $action, $icon)
@@ -134,6 +196,7 @@ class TMenuParser
             $xml_doc->preserveWhiteSpace = false;
             $xml_doc->formatOutput = true;
             $xml_doc->load($this->path);
+            $xml_doc->encoding = 'utf-8';
             
             foreach ($xml_doc->getElementsByTagName('menuitem') as $node)
             {

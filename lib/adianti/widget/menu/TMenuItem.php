@@ -1,6 +1,7 @@
 <?php
 namespace Adianti\Widget\Menu;
 
+use Adianti\Core\AdiantiCoreApplication;
 use Adianti\Widget\Menu\TMenu;
 use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Util\TImage;
@@ -81,7 +82,14 @@ class TMenuItem extends TElement
             }
             else
             {
-                $this->link-> href = "index.php?class={$action}";
+                if ($router = AdiantiCoreApplication::getRouter())
+                {
+                    $this->link-> href = $router("class={$action}", true);
+                }
+                else
+                {
+                    $this->link-> href = "index.php?class={$action}";
+                }
                 $this->link-> generator = 'adianti';
             }
         }
@@ -105,8 +113,12 @@ class TMenuItem extends TElement
         {
             $label->add($this->label);
         }
-        $this->link->add($label);
-        $this->add($this->link);
+        
+        if (!empty($this->label))
+        {
+            $this->link->add($label);
+            $this->add($this->link);
+        }
         
         if ($this->menu instanceof TMenu)
         {
