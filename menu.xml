@@ -92,19 +92,11 @@
       </menuitem>
     </menu>
   </menuitem>
-  <menuitem label="Common pages">
+  <menuitem label="Examples">
     <menu>
-      <menuitem label="Common page 1">
+      <menuitem label="Vuejs View">
         <icon/>
-        <action>CommonPage</action>
-      </menuitem>
-      <menuitem label="Common page 2">
-        <icon/>
-        <action>CommonPage</action>
-      </menuitem>
-      <menuitem label="Common page 3">
-        <icon/>
-        <action>CommonPage</action>
+        <action>AdVue</action>
       </menuitem>
     </menu>
   </menuitem>
