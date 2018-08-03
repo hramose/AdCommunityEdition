@@ -1,0 +1,96 @@
+[02-Aug-2018 23:25:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:25:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:18 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
+[02-Aug-2018 23:26:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'SystemUser' not found in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php:13
+Stack trace:
+#0 /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php(36): AtendenteService->getData()
+#1 /Applications/AMPPS/www/AdCommunityEdition/lib/adianti/core/AdiantiCoreApplication.php(62): AtendenteService->show(Array)
+#2 /Applications/AMPPS/www/AdCommunityEdition/engine.php(37): Adianti\Core\AdiantiCoreApplication::run(true)
+#3 /Applications/AMPPS/www/AdCommunityEdition/engine.php(56): TApplication::run(true)
+#4 {main}
+  thrown in /Applications/AMPPS/www/AdCommunityEdition/app/service/AtendenteService.class.php on line 13
