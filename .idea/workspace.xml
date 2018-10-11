@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e0918df-94d7-449b-8d8f-6febafa08900" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/lib/hlib/pjbank/PjBoleto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/application.ini" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/application.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/MessageList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/MessageList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/NotificationList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/NotificationList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/WelcomeView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/WelcomeView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/LoginForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/LoginForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/LoginMultiUnitForm.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemDataBrowser.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemDataBrowser.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemDatabaseExplorer.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemDatabaseExplorer.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemGroupForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemGroupForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemGroupList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemGroupList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemMenuUpdate.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemMenuUpdate.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemPHPInfoView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemPHPInfoView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemPageBatchUpdate.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemPageBatchUpdate.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemPageUpdate.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemPageUpdate.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemPreferenceForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemPreferenceForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemProfileForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemProfileForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemProfileView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemProfileView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemProgramForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemProgramForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemProgramList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemProgramList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemSQLPanel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemSQLPanel.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemSupportForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemSupportForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemTableList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemTableList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemUnitList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemUnitList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemUserForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemUserForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/admin/SystemUserList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/admin/SystemUserList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemDocumentCategoryFormList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemDocumentCategoryFormList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemDocumentForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemDocumentForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemDocumentList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemDocumentList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemMessageForm.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemMessageForm.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemMessageFormView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemMessageFormView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemNotificationFormView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemNotificationFormView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/communication/SystemNotificationList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/communication/SystemNotificationList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/log/SystemAccessLogList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/log/SystemAccessLogList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/log/SystemChangeLogView.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/log/SystemChangeLogView.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/control/log/SystemSqlLogList.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/control/log/SystemSqlLogList.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/communication-firebird.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/communication-mssql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/communication-oracle.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/communication-sqlite.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/communication.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/communication.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/inserts-permission.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log-firebird.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log-mssql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log-mysql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log-oracle.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log-sqlite.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/log.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/log.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission-firebird.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission-mssql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission-oracle.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission-sqlite.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/permission.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/permission.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/permission.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/sample.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/barcode/AdiantiBarcodeDocumentGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/barcode/AdiantiBarcodeDocumentGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/hlib/HJQueryDialog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/hlib/HJQueryDialog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/hlib/HPageNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/hlib/HPageNavigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/hlib/HWindow.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/hlib/HWindow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/html/AdiantiHTMLDocumentParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/html/AdiantiHTMLDocumentParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/include/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/include/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/include/c3/c3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/include/c3/c3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/include/c3/d3.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/include/c3/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/menu/AdiantiMenuBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/menu/AdiantiMenuBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/pdf/FPDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/pdf/FPDF.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TAdiantiElement.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TAdiantiElement.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TAdiantiStyle.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TAdiantiStyle.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TAdiantiTable.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TAdiantiTable.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TAdiantiTableCell.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TAdiantiTableCell.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TAdiantiTableRow.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TAdiantiTableRow.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TTableWriterHTML.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TTableWriterHTML.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TTableWriterPDF.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TTableWriterPDF.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TTableWriterRTF.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TTableWriterRTF.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/reports/TTableWriterXLS.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/reports/TTableWriterXLS.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/util/ApplicationTranslator.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/util/ApplicationTranslator.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/util/MailService.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/util/MailService.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/util/TMail.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/util/TMail.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/widget/TStep.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/widget/tstep.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/admin/SystemGroup.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/admin/SystemGroup.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/admin/SystemPermission.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/admin/SystemPermission.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/admin/SystemPreference.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/admin/SystemPreference.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/admin/SystemProgram.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/admin/SystemProgram.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/admin/SystemUsers.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/communication/SystemDocument.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/communication/SystemDocument.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/communication/SystemMessage.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/communication/SystemMessage.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/communication/SystemNotification.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/communication/SystemNotification.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/log/SystemChangeLog.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/log/SystemChangeLog.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/AtendenteService.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/system/SystemDatabaseInformationService.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/system/SystemDatabaseInformationService.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme3/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme3/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme3/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme3/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme3/libraries.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme3/libraries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme3/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme3/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme4/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme4/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme4/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme4/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme4/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme4/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme4/libraries.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme4/libraries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/theme4/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/theme4/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download.php" beforeDir="false" afterPath="$PROJECT_DIR$/download.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiFileSaveTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiFileSaveTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiMasterDetailTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiMasterDetailTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardControlTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardControlTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardFormListTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardFormListTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardFormTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardFormTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardListTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/AdiantiStandardListTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/TStandardForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/TStandardForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/TStandardFormList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/TStandardFormList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/TStandardList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/TStandardList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/base/TStandardSeek.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/base/TStandardSeek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/control/TAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/control/TAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/control/TPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/control/TPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/control/TWindow.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/control/TWindow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiApplicationConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiApplicationConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiApplicationLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiApplicationLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiClassMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiClassMap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreApplication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreTranslator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/core/AdiantiCoreTranslator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TCriteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TCriteria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TExpression.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TExpression.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TSqlDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TSqlDelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TSqlInsert.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TSqlInsert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TSqlSelect.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TSqlSelect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TSqlStatement.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TSqlStatement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TSqlUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TSqlUpdate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/database/TTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/database/TTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/adianti.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/adianti.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/components.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/components.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/components.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/components.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tcombo/tcombo.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tcombo/tcombo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tdbmultisearch/tdbmultisearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tdbmultisearch/tdbmultisearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tfield/tfield.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tfield/tfield.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tfile/tfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tfile/tfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tform/tform.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tform/tform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tmultifile/tmultifile.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tmultifile/tmultifile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/tpagenavigation/tpagenavigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/tpagenavigation/tpagenavigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/include/ttable/ttable.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/include/ttable/ttable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/AdiantiLoggerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/AdiantiLoggerInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/TLogger.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/TLogger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/TLoggerHTML.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/TLoggerHTML.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/TLoggerSTD.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/TLoggerSTD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/TLoggerTXT.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/TLoggerTXT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/log/TLoggerXML.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/log/TLoggerXML.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/registry/AdiantiRegistryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/registry/AdiantiRegistryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/registry/TAPCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/registry/TAPCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/registry/TSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/registry/TSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/service/AdiantiAutocompleteService.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/service/AdiantiAutocompleteService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/service/AdiantiMultiSearchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/service/AdiantiMultiSearchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/service/AdiantiRecordService.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/service/AdiantiRecordService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/service/AdiantiUploaderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/service/AdiantiUploaderService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TCNPJValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TCNPJValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TCPFValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TCPFValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TEmailValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TEmailValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TFieldValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TFieldValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TMaxLengthValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TMaxLengthValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TMaxValueValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TMaxValueValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TMinLengthValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TMinLengthValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TMinValueValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TMinValueValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TNumericValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TNumericValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/validator/TRequiredValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/validator/TRequiredValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/base/TElement.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/base/TElement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/base/TScript.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/base/TScript.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/base/TStyle.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/base/TStyle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TExpander.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TExpander.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TFrame.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TFrame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/THBox.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/THBox.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TJQueryDialog.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TJQueryDialog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TNotebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TNotebook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TPanel.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TPanel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TPanelGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TPanelGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TScroll.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TScroll.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TTableCell.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TTableCell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TTableRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TTableRow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/container/TVBox.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/container/TVBox.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGrid.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGrid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridActionGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridActionGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridColumn.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TDataGridColumn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TPageNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/datagrid/TPageNavigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/dialog/TAlert.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/dialog/TAlert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/dialog/TInputDialog.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/dialog/TInputDialog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/dialog/TMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/dialog/TMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/dialog/TQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/dialog/TQuestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/AdiantiFormInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/AdiantiFormInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/AdiantiWidgetInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/AdiantiWidgetInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TCheckButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TCheckButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TCheckGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TCheckGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TCombo.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TCombo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TComboCombined.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TComboCombined.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TDateTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TDateTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TEntry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TField.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TFieldList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TFieldList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TFormSeparator.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TFormSeparator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/THidden.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/THidden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/THtmlEditor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/THtmlEditor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TIcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TIcon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TLabel.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TLabel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiEntry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiField.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TMultiSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TNumeric.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TNumeric.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TRadioButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TRadioButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TRadioGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TRadioGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TSeekButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TSeekButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TSelect.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TSelect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TSlider.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TSlider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TSortList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TSortList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TSpinner.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TSpinner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TText.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TText.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/form/TUniqueSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/form/TUniqueSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/menu/TMenuParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/template/THtmlRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/template/THtmlRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TActionLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TActionLink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TBreadCrumb.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TBreadCrumb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TCalendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TCalendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TDropDown.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TDropDown.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TExceptionView.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TExceptionView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TFullCalendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TFullCalendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/THyperLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/THyperLink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TProgressBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TProgressBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TSourceCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TSourceCode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TTextDisplay.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TTextDisplay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TTreeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TTreeView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/util/TXMLBreadCrumb.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/util/TXMLBreadCrumb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBCheckGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBCheckGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBCombo.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBCombo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBEntry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBMultiSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBMultiSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBRadioGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBRadioGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSeekButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSeekButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSelect.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSelect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSortList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBSortList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBUniqueSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TDBUniqueSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickGrid.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickGrid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickNotebookForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/widget/wrapper/TQuickNotebookForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/AdiantiPDFDesigner.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/AdiantiPDFDesigner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/AdiantiUIBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/AdiantiUIBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapDatagridWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapDatagridWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapFormBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapFormBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapFormWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapFormWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapNotebookWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/adianti/wrapper/BootstrapNotebookWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest.php.dist" beforeDir="false" afterPath="$PROJECT_DIR$/rest.php.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/php_errors.log" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1221037136">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="2213" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="2213" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="json" value="1" />
+          <entry key="php" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="PHP" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.test" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.php.rename.constructor" />
+      <usages-collector id="statistics.php.composer.command.options" />
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.composer.actions" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/control/WelcomeView.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="44" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/control/pjbank/InvalidarBoleto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/control/pjbank/CriarConta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PJBank.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="966">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="73" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/control/pjbank/ImprimirBoletos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mixed</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>String</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/lib/hlib/PJBank.class.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PjReturnBoleto.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/Split.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PjBoleto.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PJBoletoEmLote.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PJCredencial.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PJBase.php" />
+        <option value="$PROJECT_DIR$/app/control/pjbank/BoletoEmLoteSplit.php" />
+        <option value="$PROJECT_DIR$/app/control/pjbank/BoletoSplit.php" />
+        <option value="$PROJECT_DIR$/app/control/WelcomeView.class.php" />
+        <option value="$PROJECT_DIR$/app/control/pjbank/CriarConta.php" />
+        <option value="$PROJECT_DIR$/app/lib/hlib/pjbank/PJBank.class.php" />
+        <option value="$PROJECT_DIR$/app/control/pjbank/ImprimirBoletos.php" />
+        <option value="$PROJECT_DIR$/app/control/pjbank/InvalidarBoleto.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/app/templates/indev/bower_components/bootstrap-material-design/package.json" />
+      <path value="$PROJECT_DIR$/app/templates/indev/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/app/templates/indev/bower_components/bulma/package.json" />
+      <path value="$PROJECT_DIR$/app/templates/indev/bower_components/tether/package.json" />
+      <path value="$PROJECT_DIR$/app/templates/theme4/plugins/bootstrap-material-datetimepicker/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/pablodalloglio/spreadsheet_excel_writer" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/pablodalloglio/ole" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/phprtflite/phprtflite" />
+      <path value="$PROJECT_DIR$/vendor/tburry/pquery" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/picqer/php-barcode-generator" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AdCommunityEdition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdCommunityEdition" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdCommunityEdition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdCommunityEdition" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdCommunityEdition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdCommunityEdition" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdCommunityEdition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdCommunityEdition" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="pjbank" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/lib/hlib/pjbank" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e0918df-94d7-449b-8d8f-6febafa08900" name="Default Changelist" comment="" />
+      <created>1536630535266</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536630535266</updated>
+      <workItem from="1536630553981" duration="4093000" />
+      <workItem from="1536753153188" duration="8508000" />
+      <workItem from="1536770835951" duration="2953000" />
+      <workItem from="1536803744790" duration="2624000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18178000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32892805" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PjReturnBoleto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/Split.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1588">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PJCredencial.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PJBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PJBoletoEmLote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PjBoleto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/pjbank/BoletoEmLoteSplit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/pjbank/BoletoSplit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="45" column="10" lean-forward="true" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/WelcomeView.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="44" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/pjbank/CriarConta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/hlib/pjbank/PJBank.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="73" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/pjbank/ImprimirBoletos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/control/pjbank/InvalidarBoleto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

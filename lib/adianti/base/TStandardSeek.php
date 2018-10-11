@@ -30,7 +30,7 @@ use StdClass;
 /**
  * Standard Page controller for Seek buttons
  *
- * @version    5.0
+ * @version    5.5
  * @package    base
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
@@ -228,14 +228,13 @@ class TStandardSeek extends TWindow
                     $param['order'] = $pk;
                     $param['direction'] = 'asc';
                 }
-                else
-                {
-                    if ($param['order'] == 'display_field')
-                    {
-                        $param['order'] = $display_field;
-                    }
-                }
             }
+            
+            if ($param['order'] == 'display_field')
+            {
+                $param['order'] = $display_field;
+            }
+            
             $criteria->setProperties($param); // order, offset
             $criteria->setProperty('limit', $limit);
             

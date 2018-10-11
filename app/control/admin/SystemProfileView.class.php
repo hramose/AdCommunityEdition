@@ -22,7 +22,7 @@ class SystemProfileView extends TPage
         {
             TTransaction::open('permission');
             
-            $user= SystemUsers::newFromLogin(TSession::getValue('login'));
+            $user= SystemUser::newFromLogin(TSession::getValue('login'));
             $replaces = $user->toArray();
             $replaces['frontpage'] = $user->frontpage_name;
             $replaces['groupnames'] = $user->getSystemUserGroupNames();

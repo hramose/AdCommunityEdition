@@ -10,7 +10,7 @@ use Exception;
 /**
  * TableRow: Represents a row inside a table
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage container
  * @author     Pablo Dall'Oglio

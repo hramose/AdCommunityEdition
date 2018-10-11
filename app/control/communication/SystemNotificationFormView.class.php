@@ -40,8 +40,8 @@ class SystemNotificationFormView extends TPage
                         $array_object['action_encoded'] = base64_encode($array_object['action_url']);
                         
                         TTransaction::open('permission');
-                        $user = SystemUsers::find($array_object['system_user_id']);
-                        if ($user instanceof SystemUsers)
+                        $user = SystemUser::find($array_object['system_user_id']);
+                        if ($user instanceof SystemUser)
                         {
                             $array_object['user'] = $user->name . ' (' . $array_object['system_user_id'] . ')';
                         }

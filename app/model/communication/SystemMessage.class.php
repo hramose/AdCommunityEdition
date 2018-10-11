@@ -32,12 +32,12 @@ class SystemMessage extends TRecord
     
     public function get_user_from()
     {
-        return SystemUsers::findInTransaction('permission', $this->system_user_id);
+        return SystemUser::findInTransaction('permission', $this->system_user_id);
     }
     
     public function get_user_to()
     {
-        return SystemUsers::findInTransaction('permission', $this->system_user_to_id);
+        return SystemUser::findInTransaction('permission', $this->system_user_to_id);
     }
     
     public function get_user_mixed()

@@ -32,7 +32,7 @@ class SystemDocumentForm extends TPage
         $category_id = new TDBCombo('category_id', 'communication', 'SystemDocumentCategory', 'id', 'name');
         $submission_date = new TDate('submission_date');
         $archive_date = new TDate('archive_date');
-        $user_ids = new TDBMultiSearch('user_ids', 'permission', 'SystemUsers', 'id', 'name');
+        $user_ids = new TDBMultiSearch('user_ids', 'permission', 'SystemUser', 'id', 'name');
         $group_ids = new TDBCheckGroup('group_ids', 'permission', 'SystemGroup', 'id', 'name');
         $group_ids->setLayout('horizontal');
         $user_ids->setMinLength(1);
@@ -106,7 +106,7 @@ class SystemDocumentForm extends TPage
                 foreach ($data->user_ids as $user_id)
                 {
                     TTransaction::open('permission');
-                    $system_user = SystemUsers::find($user_id);
+                    $system_user = SystemUser::find($user_id);
                     TTransaction::close();
                     $object->addSystemUser( $system_user );
                 }

@@ -2,7 +2,7 @@
 /**
  * PDF Writer
  *
- * @version    5.0
+ * @version    5.5
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
  * @license    http://www.adianti.com.br/framework-license
@@ -46,6 +46,24 @@ class TTableWriterPDF implements ITableWriter
         $this->pdf = new FPDF($orientation, 'pt', $format);
         $this->pdf->Open();
         $this->pdf->AddPage();
+    }
+    
+    /**
+     * Set Header callback
+     */
+    public function setHeaderCallback( $callback )
+    {
+        // call the first time
+        call_user_func($callback, $this);
+        $this->pdf->setHeaderCallback($callback, $this);
+    }
+    
+    /**
+     * Set Footer callback
+     */
+    public function setFooterCallback( $callback )
+    {
+        $this->pdf->setFooterCallback($callback, $this);
     }
     
     /**

@@ -29,7 +29,7 @@ class SystemMessageForm extends TWindow
         $this->form->style = 'display: table;width:100%'; // change style
         
         // create the form fields
-        $system_user_to_id = new TDBUniqueSearch('system_user_to_id', 'permission', 'SystemUsers', 'id', 'name');
+        $system_user_to_id = new TDBUniqueSearch('system_user_to_id', 'permission', 'SystemUser', 'id', 'name');
         $subject = new TEntry('subject');
         $message = new TText('message');
         $system_user_to_id->setMinLength(2);

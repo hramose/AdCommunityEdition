@@ -8,7 +8,7 @@ use Adianti\Widget\Base\TScript;
 /**
  * Question Dialog
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage dialog
  * @author     Pablo Dall'Oglio

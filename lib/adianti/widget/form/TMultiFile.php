@@ -15,7 +15,7 @@ use Exception;
 /**
  * FileChooser widget
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage form
  * @author     Nataniel Rabaioli
@@ -63,6 +63,7 @@ class TMultiFile extends TField implements AdiantiWidgetInterface
     public function setAllowedExtensions($extensions)
     {
         $this->extensions = $extensions;
+        $this->tag->{'accept'} = '.' . implode(',.', $extensions);
     }
     
     /**

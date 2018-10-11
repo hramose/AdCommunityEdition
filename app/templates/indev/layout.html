@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indev Admin Adianti</title>
+     {LIBRARIES}
+    {HEAD}
+    
+    <script>
+            $(function() {
+                update_notifications_menu();
+                update_messages_menu();
+                
+               setInterval( update_messages_menu, 5000);
+               setInterval( update_notifications_menu, 5000);
+            });
+            
+            function update_messages_menu() {
+                $.get('engine.php?class=MessageList&theme=indev', function(data) {
+                    $('#envelope_messages').html(data);
+                });
+            }
+            
+            function update_notifications_menu() {
+                $.get('engine.php?class=NotificationList&theme=indev', function(data) {
+                    $('#envelope_notifications').html(data);
+                });
+            }
+            
+            $.get('engine.php?class=SearchInputBox', function(data) {
+                $('#envelope_search').html(data);
+            });
+            </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top bg-primary">
+        <div class="container-fluid"><a class="navbar-brand" href="#">ADMIN INDEV</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                
+
+
+                 {MENU}
+
+                 <ul class="nav navbar-nav ml-auto navbar-right">
+                                                    <!-- Notifications -->
+                   <li class="nav-item">
+                      <a class="nav-link" generator="adianti" href="index.php?class=SystemSupportForm">
+                             <i class="material-icons">help_outline</i>
+                               </a>
+                          </li>
+
+                      <li role="presentation" class="dropdown nav-item" id="envelope_messages">
+                        <!-- /.dropdown-messages -->
+                         </li>
+                                                        
+                         <li  class="dropdown nav-item" id="envelope_notifications">
+                                                            <!-- /.dropdown-messages -->
+                        </li>
+
+   
+
+                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Usuario</a>
+                            <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" href="index.php?class=SystemProfileView"><i class="material-icons">person</i>_t{Profile}</a>
+                      
+                                    <a class="dropdown-item" href="index.php?class=SystemMessageList&method=filterInbox"><i class="material-icons">email</i>_t{Messages}</a>
+                                    <a class="dropdown-item" href="index.php?class=SystemNotificationList"><i class="material-icons">notifications</i>_t{Notifications}</a>
+                                   
+                                    <a class="dropdown-item" href="index.php?class=LoginForm&method=reloadPermissions&static=1"><i class="material-icons">cached</i>_t{Reload}</a>
+                                    <a class="dropdown-item" generator="adianti" href="index.php?class=LoginForm&method=onLogout&static=1"><i class="material-icons">input</i>Logout</a>
+                           
+                                    
+                            </div>
+                        </li>
+
+                    </ul>
+
+            </div>
+        </div>
+    </nav>
+        <!-- Content Wrapper. Contains page content -->
+      <div class="col-11 offset-1">
+        <!-- Main content -->
+        <section class="content">
+            <div id="adianti_div_content">
+            </div>
+        </section><!-- /.content -->
+        
+        <div id="adianti_online_content"></div>
+        <div id="adianti_online_content2"></div>
+        
+      </div><!-- /.content-wrapper -->
+
+
+</body>
+
+</html>

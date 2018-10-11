@@ -15,7 +15,7 @@ use ReflectionClass;
 /**
  * Implements the Repository Pattern to deal with collections of Active Records
  *
- * @version    5.0
+ * @version    5.5
  * @package    database
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
@@ -524,9 +524,8 @@ class TRepository
             if ($result)
             {
                 $row = $result->fetch();
+                return $row[0];
             }
-            // returns the result
-            return $row[0];
         }
         else
         {

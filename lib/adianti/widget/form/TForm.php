@@ -13,7 +13,7 @@ use ReflectionClass;
 /**
  * Wrapper class to deal with forms
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage form
  * @author     Pablo Dall'Oglio
@@ -161,7 +161,7 @@ class TForm implements AdiantiFormInterface
                 {
                     if (is_array($value))
                     {
-                        $value = implode(',', $value);
+                        $value = implode('|', $value);
                     }
                     
                     // if inside ajax request, then utf8_encode if isn't utf8

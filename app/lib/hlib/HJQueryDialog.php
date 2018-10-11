@@ -1,16 +1,5 @@
 <?php
-/**
- * JQuery dialog container with proposed updates
- *
- * @version    5.1
- * @package    widget
- * @subpackage container
- * @author     Pablo Dall'Oglio
- * @author     Rodrigo Moglia
- * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
- * @copyright  Copyright (c) 2018 Interatia Sistemas de Informação. (http://www.interatia.com)
- * @license    http://www.adianti.com.br/framework-license
- */
+
 class HJQueryDialog extends TElement
 {
     private $actions;

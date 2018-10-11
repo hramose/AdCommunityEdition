@@ -172,6 +172,53 @@ class NotificationList extends TElement
                 
                 parent::add(TElement::tag('li', TElement::tag('a', _t('View all'), array('href'=>'index.php?class=SystemNotificationList', 'generator'=>'adianti') ), array('class'=>'footer')));
             }
+
+            else if ($param['theme'] == 'indev')
+            {
+                $this->class = 'dropdown-menu';
+                
+                $a = new TElement('a');
+                $a->{'class'} = "dropdown-toggle nav-link dropdown-toggle";
+                $a->{'data-toggle'}="dropdown";
+                $a->{'href'} = "#";
+                
+                $a->add( TElement::tag('i',    '', array('class'=>"fa fa-bell-o fa-fw")) );
+                $a->add( TElement::tag('span', count($system_notifications), array('class'=>"label label-warning")) );
+                $a->show();
+
+                $li_master = new TElement('li');
+                $li_master->{'class'} = 'nav-item';
+                $ul_wrapper = new TElement('ul');
+                $ul_wrapper->{'class'} = 'menu';
+                $li_master->add($ul_wrapper);
+                parent::add($li_master);
+                
+                foreach ($system_notifications as $system_notification)
+                {
+                    $date    = $this->getShortPastTime($system_notification->dt_message);
+                    $subject = $system_notification->subject;
+                    $icon    = $system_notification->icon ? $system_notification->icon : 'fa fa-bell-o text-aqua';
+                    $icon    = str_replace( 'fa:', 'fa fa-', $icon);
+                    
+                   $li  = new TElement('li');
+                    $li->{'class'} = 'nav-item';
+                    $a   = new TElement('a');
+                    $a->{'class'} = 'nav-link';
+                    $div = new TElement('div');
+                    
+                    $a->href = 'index.php?class=SystemNotificationFormView&method=onView&id='.$system_notification->id;
+                    $a->generator = 'adianti';
+                    $li->add($a);
+                    
+                    $i = new TElement('i');
+                    $i->{'class'} = $icon;
+                    $a->add($i);
+                    $a->add($subject);
+                    $a->add( TElement::tag('span', $date, array('class' => 'pull-right text-muted small') ) );
+                    
+                    $ul_wrapper->add($li);
+                }
+            }
             
             TTransaction::close();
         }

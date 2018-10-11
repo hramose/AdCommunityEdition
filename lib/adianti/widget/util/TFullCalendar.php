@@ -10,7 +10,7 @@ use stdClass;
 /**
  * FullCalendar Widget
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage util
  * @author     Pablo Dall'Oglio

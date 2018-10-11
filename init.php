@@ -1,8 +1,5 @@
 <?php
 // define the autoloader
-
-ini_set('error_log', 'tmp/php_errors.log');
-
 require_once 'lib/adianti/core/AdiantiCoreLoader.php';
 spl_autoload_register(array('Adianti\Core\AdiantiCoreLoader', 'autoload'));
 Adianti\Core\AdiantiCoreLoader::loadClassMap();

@@ -26,7 +26,7 @@ class LoginForm extends TPage
         $this->style = 'clear:both';
         // creates the form
         $this->form = new BootstrapFormBuilder('form_login');
-        $this->form->setFormTitle( 'Acesso' );
+        $this->form->setFormTitle( 'LOG IN' );
         
         // create the form fields
         $login = new TEntry('login');
@@ -59,20 +59,14 @@ class LoginForm extends TPage
             $this->form->addFields( [$unit, $unit_id] );
             $login->setExitAction(new TAction( [$this, 'onExitUser'] ) );
         }
-
-        $btn = $this->form->addAction('Entrar', new TAction(array($this, 'onLogin')), '');
-        $btn->class = 'btn btn-default';
+        
+        $btn = $this->form->addAction(_t('Log in'), new TAction(array($this, 'onLogin')), '');
+        $btn->class = 'btn btn-primary';
         $btn->style = 'height: 40px;width: 90%;display: block;margin: auto;font-size:17px;';
         
         $wrapper = new TElement('div');
         $wrapper->style = 'margin:auto; margin-top:100px;max-width:460px;';
-        $wrapper->id = 'login-wrapper';
-        
-        $h3 = new TElement('h1');
-        $h3->style = 'text-align:center;';
-        $h3->add('Login');
-        
-        $wrapper->add($h3);
+        $wrapper->id    = 'login-wrapper';
         $wrapper->add($this->form);
         
         // add the form to the page
@@ -89,8 +83,8 @@ class LoginForm extends TPage
         {
             TTransaction::open('permission');
             
-            $user = SystemUsers::newFromLogin( $param['login'] );
-            if ($user instanceof SystemUsers)
+            $user = SystemUser::newFromLogin( $param['login'] );
+            if ($user instanceof SystemUser)
             {
                 $units = $user->getSystemUserUnits();
                 $options = [];
@@ -136,9 +130,25 @@ class LoginForm extends TPage
                 throw new Exception( AdiantiCoreTranslator::translate('The field ^1 is required', _t('Password')) );
             }
             
-            $user = SystemUsers::authenticate( $data->login, $data->password );
+            if (!empty($ini['general']['multiunit']) and $ini['general']['multiunit'] == '1' and empty($data->unit_id))
+            {    
+                throw new Exception( AdiantiCoreTranslator::translate('The field ^1 is required', _t('Unit')) );
+            }
+            
+            $user = SystemUser::validate( $data->login );
+            
             if ($user)
             {
+                if (!empty($ini['permission']['auth_service']) and class_exists($ini['permission']['auth_service']))
+                {
+                    $service = $ini['permission']['auth_service'];
+                    $service::authenticate( $data->login, $data->password );
+                }
+                else
+                {
+                    SystemUser::authenticate( $data->login, $data->password );
+                }
+                
                 TSession::regenerate();
                 $programs = $user->getPrograms();
                 $programs['LoginForm'] = TRUE;
@@ -165,7 +175,7 @@ class LoginForm extends TPage
                 
                 $frontpage = $user->frontpage;
                 SystemAccessLog::registerLogin();
-                if ($frontpage instanceof SystemProgram AND $frontpage->controller)
+                if ($frontpage instanceof SystemProgram and $frontpage->controller)
                 {
                     AdiantiCoreApplication::gotoPage($frontpage->controller); // reload
                     TSession::setValue('frontpage', $frontpage->controller);
@@ -194,7 +204,8 @@ class LoginForm extends TPage
         try
         {
             TTransaction::open('permission');
-            $user = SystemUsers::newFromLogin( TSession::getValue('login') );
+            $user = SystemUser::newFromLogin( TSession::getValue('login') );
+            
             if ($user)
             {
                 $programs = $user->getPrograms();
@@ -217,6 +228,13 @@ class LoginForm extends TPage
         {
             new TMessage('error', $e->getMessage());
         }
+    }
+    
+    /**
+     *
+     */
+    public function onLoad($param)
+    {
     }
     
     /**

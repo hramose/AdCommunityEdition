@@ -26,7 +26,7 @@ class SystemUserList extends TStandardList
         parent::__construct();
         
         parent::setDatabase('permission');            // defines the database
-        parent::setActiveRecord('SystemUsers');   // defines the active record
+        parent::setActiveRecord('SystemUser');   // defines the active record
         parent::setDefaultOrder('id', 'asc');         // defines the default order
         parent::addFilterField('id', '=', 'id'); // filterField, operator, formField
         parent::addFilterField('name', 'like', 'name'); // filterField, operator, formField
@@ -144,6 +144,7 @@ class SystemUserList extends TStandardList
         
         // create the page navigation
         $this->pageNavigation = new TPageNavigation;
+        $this->pageNavigation->enableCounters();
         $this->pageNavigation->setAction(new TAction(array($this, 'onReload')));
         $this->pageNavigation->setWidth($this->datagrid->getWidth());
         
@@ -169,8 +170,8 @@ class SystemUserList extends TStandardList
         try
         {
             TTransaction::open('permission');
-            $user = SystemUsers::find($param['id']);
-            if ($user instanceof SystemUsers)
+            $user = SystemUser::find($param['id']);
+            if ($user instanceof SystemUser)
             {
                 $user->active = $user->active == 'Y' ? 'N' : 'Y';
                 $user->store();

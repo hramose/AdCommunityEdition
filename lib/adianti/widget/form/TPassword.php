@@ -12,7 +12,7 @@ use Exception;
 /**
  * Password Widget
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage form
  * @author     Pablo Dall'Oglio
@@ -39,6 +39,18 @@ class TPassword extends TField implements AdiantiWidgetInterface
         {
             $string_action = $action->toString();
             throw new Exception(AdiantiCoreTranslator::translate('Action (^1) must be static to be used in ^2', $string_action, __METHOD__));
+        }
+    }
+    
+    /**
+     * Define max length
+     * @param  $length Max length
+     */
+    public function setMaxLength($length)
+    {
+        if ($length > 0)
+        {
+            $this->tag->{'maxlength'} = $length;
         }
     }
     

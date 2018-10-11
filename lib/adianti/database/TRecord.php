@@ -18,7 +18,7 @@ use Exception;
 /**
  * Base class for Active Records
  *
- * @version    5.0
+ * @version    5.5
  * @package    database
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
@@ -320,11 +320,13 @@ abstract class TRecord
                     $this->data[$key] = $data[$key];
                 }
             }
-
         }
         else
         {
-            $this->data = $data;
+            foreach ($data as $key => $value)
+            {
+                $this->data[$key] = $data[$key];
+            }
         }
     }
     
@@ -608,7 +610,7 @@ abstract class TRecord
         // creates a SELECT instruction
         $sql = new TSqlSelect;
         $sql->setEntity($this->getEntity());
-        $sql->addColumn('*');
+        $sql->addColumn($this->getAttributeList());
         
         // creates a select criteria based on the ID
         $criteria = new TCriteria;
@@ -696,7 +698,8 @@ abstract class TRecord
         // creates a SELECT instruction
         $sql = new TSqlSelect;
         $sql->setEntity($this->getEntity());
-        $sql->addColumn('*');
+        // use *, once this is called before addAttribute()s
+        $sql->addColumn($this->getAttributeList());
         
         // creates a select criteria based on the ID
         $criteria = new TCriteria;
@@ -1055,7 +1058,6 @@ abstract class TRecord
      * @param $join_class Active Record Join Class (Parent / Aggregated)
      * @param $foreign_key_parent Foreign key in Join Class to parent object
      * @param $foreign_key_child Foreign key in Join Class to child object
-     * @param $id Primary key of parent object
      * @returns Array of Active Records
      */
     public function belongsToMany($aggregate_class, $join_class = NULL, $foreign_key_parent = NULL, $foreign_key_child = NULL)
@@ -1099,6 +1101,17 @@ abstract class TRecord
     {
         $object = new static;
         $id = $object->getFirstID();
+        
+        return self::find($id);
+    }
+    
+    /**
+     * Returns the last object
+     */
+    public static function last()
+    {
+        $object = new static;
+        $id = $object->getLastID();
         
         return self::find($id);
     }

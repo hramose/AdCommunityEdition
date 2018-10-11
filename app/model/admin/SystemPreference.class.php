@@ -21,7 +21,7 @@ class SystemPreference extends TRecord
     public function __construct($id = NULL, $callObjectLoad = TRUE)
     {
         parent::__construct($id, $callObjectLoad);
-        parent::addAttribute('preference');
+        parent::addAttribute('value');
     }
     
     /**
@@ -31,20 +31,20 @@ class SystemPreference extends TRecord
     public static function getPreference($id)
     {
         $preference = new SystemPreference($id);
-        return $preference->preference;
+        return $preference->value;
     }
     
     /**
      * Altera uma preferência
      * @param $id  Id da preferência
-     * @param $preference Valor da preferência
+     * @param $value Valor da preferência
      */
-    public static function setPreference($id, $preference)
+    public static function setPreference($id, $value)
     {
         $preference = SystemPreference::find($id);
         if ($preference)
         {
-            $preference->preference = $preference;
+            $preference->value = $value;
             $preference->store();
         }
     }
@@ -63,8 +63,8 @@ class SystemPreference extends TRecord
             foreach ($objects as $object)
             {
                 $property = $object->id;
-                $preference = $object->preference;
-                $dataset[$property] = $preference;
+                $value    = $object->value;
+                $dataset[$property] = $value;
             }
         }
         return $dataset;

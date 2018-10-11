@@ -39,13 +39,14 @@ class SystemDatabaseInformationService
             TTransaction::open($database);
             $conn = TTransaction::get();
             $result = $conn->query($sql);
-            TTransaction::close();
             $tables = $result->fetchAll();
+            
             foreach ($tables as $row)
             {
                 $table_name = $row[0];
                 $table_list[ $table_name ] = $table_name;
             }
+            TTransaction::close();
             return $table_list;
         }
     }

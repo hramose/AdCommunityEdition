@@ -203,6 +203,63 @@ class MessageList extends TElement
                 parent::add(TElement::tag('li', TElement::tag('a', _t('Read messages'), array('href'=>'index.php?class=SystemMessageList&method=filterInbox', 'generator'=>'adianti') ), array('class'=>'footer')));
                 parent::add(TElement::tag('li', TElement::tag('a', _t('Send message'), array('href'=>'index.php?class=SystemMessageForm', 'generator'=>'adianti') ), array('class'=>'footer')));
             }
+
+            else if ($param['theme'] == 'indev')
+            {
+                $this->class = 'dropdown-menu';
+                
+                $a = new TElement('a');
+                $a->{'class'} = "dropdown-toggle nav-link dropdown-toggle";
+                $a->{'data-toggle'}="dropdown";
+                $a->{'href'} = "#";
+                
+                $a->add( TElement::tag('i',    '', array('class'=>"fa fa-envelope fa-fw")) );
+                $a->add( TElement::tag('span', count($system_messages), array('class'=>"label label-success")) );
+                $a->show();
+                
+                $li_master = new TElement('li');
+                $li_master->{'class'} = 'nav-item';
+                $ul_wrapper = new TElement('ul');
+                $ul_wrapper->{'class'} = 'menu';
+                $li_master->add($ul_wrapper);
+                parent::add($li_master);
+                
+                TTransaction::open('permission');
+                foreach ($system_messages as $system_message)
+                {
+                    $name    = SystemUsers::find($system_message->system_user_id)->name;
+                    $date    = $this->getShortPastTime($system_message->dt_message);
+                    $subject = $system_message->subject;
+                    
+                    $li  = new TElement('li');
+                    $li->{'class'} = 'nav-item';
+                    $a   = new TElement('a');
+                    $a->{'class'} = 'nav-link';
+                    $div = new TElement('div');
+                    
+                    $a->href = 'index.php?class=SystemMessageFormView&method=onView&id='.$system_message->id;
+                    $a->generator = 'adianti';
+                    $li->add($a);
+                    
+                    $div->{'class'} = 'pull-left';
+                    $div->add( TElement::tag('i', '', array('class' => 'fa fa-user fa-2x') ) );
+                    
+                    $h4 = new TElement('h4');
+                    $h4->add( $name );
+                    $h4->add( TElement::tag('small', TElement::tag('i', $date, array('class' => 'fa fa-clock-o') ) ) );
+                    
+                    $a->add($div);
+                    $a->add($h4);
+                    $a->add( TElement::tag('p', $subject) );
+                    
+                    $ul_wrapper->add($li);
+                }
+                
+                TTransaction::close();
+                
+                parent::add(TElement::tag('li', TElement::tag('a', 'Read messages', array('href'=>'index.php?class=SystemMessageList&method=filterInbox', 'generator'=>'adianti') ), array('class'=>'footer')));
+                parent::add(TElement::tag('li', TElement::tag('a', 'Send messages', array('href'=>'index.php?class=SystemMessageForm', 'generator'=>'adianti') ), array('class'=>'footer')));
+            }
             
             TTransaction::close();
         }

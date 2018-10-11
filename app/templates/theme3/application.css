@@ -160,9 +160,13 @@ span.tdate-group-addon > i.fa-clock-o, span.tdate-group-addon > i.glyphicon-cale
 
 select.tcombo
 {
-    height: 28px;
     border: 1px solid #ccc !important;
     border-radius: 0;
+}
+
+select.tcombo:not([multiple='1'])
+{
+    height: 28px;
 }
 
 .tfield:focus
@@ -356,6 +360,26 @@ ul.navbar-top-links .open>a, ul.navbar-top-links .open>a:hover, ul.navbar-top-li
     #search-box {
         display:none !important;
     }
+    
+    ol.tbreadcrumb li 
+    {
+        padding: 0;
+    }
+    
+    .tbreadcrumb li span
+    {
+        font-size: 8pt;
+    }
+    
+    #div_breadcrumbs > ol > li:nth-child(1)
+    {
+        display: none;
+    }
+    
+    ol.tbreadcrumb li a
+    {
+        padding-right: 0.75em;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -431,11 +455,10 @@ table.tdatagrid_table
 
 .panel-default>.panel-heading
 {
-    border-top: 2px solid #3c8dbc;
+    border-top: 1px solid #797979;
     background: #f8f8f8;
-    height: 52px !important;
+    min-height: 52px !important;
     padding: 7px !important;
-}
 }
 
 .panel-footer
@@ -460,14 +483,9 @@ button.btn-primary
     color: white;
 }
 
-.panel > .panel-footer > .tpagenavigation
+.panel > .panel-footer > .tpagenavigation, .panel > .panel-footer > .tpagenavigation_resume
 {
     padding-top:0;
-}
-
-#div_breadcrumbs
-{
-    min-width: 640px;
 }
 
 .left-mailbox {
@@ -592,7 +610,7 @@ input[widget="tfile"], input[widget="tmultifile"] {
 select.tcombo {
     -webkit-appearance: none;
     -webkit-border-radius: 0px;
-    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17' height='17' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>") !important;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17' height='17' viewBox='0 0 24 24'><path fill='%23444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>") !important;
     background-position: 100% 50%;
     background-repeat: no-repeat;
     padding-left: 5px;
@@ -606,6 +624,7 @@ select.tcombo {
     padding:8px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
+    overflow-x: auto;
 }
 
 .tsourcecode code
@@ -636,66 +655,53 @@ select.tcombo {
 .fc-scroller
 {
     overflow-x: visible !important;
-}.panel{
-    border-color: #ddd !important;
-}
-.panel-default[widget='bootstrapformbuilder'] > .panel-heading, #chart-box > .panel-heading{
-    background-color:  #605ca8 !important;
-color: #fff !important;
-    border-top: 2px solid #605ca8;
-}
-#login-wrapper .panel-default > .panel-heading {
-    color: #333 !important;
-background-color: #f5f5f5 !important;   
-    border-top: 2px solid #f5f5f5;
-}
-.panel-default[widget='bootstrapformbuilder'] .panel-title, #chart-box > .panel-heading{
-    font-weight: 600;
 }
 
-.ui-dialog .window_modal
+#envelope_messages li.header
 {
-    padding:0.2px;
+    font-weight: bold;
+    text-align: center;
 }
-.ui-dialog .window_modal .panel
+
+#envelope_notifications li.header
 {
-    margin-bottom:0;
-    border-top:0;
-    border-radius:0;
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important;;
-    -moz-box-shadow: none !important;;
-    border: 0px !important;
-}
-.ui-dialog .window_modal .panel-body{
-  padding: 0px !important;
-  padding-top: 8px !important;
-  padding-right: 15px !important;
-  padding-left: 15px !important;
+    font-weight: bold;
+    text-align: center;
 }
 
-.ui-dialog .window_modal div[widget="bootstrapformbuilder"] .panel-heading{
-   display: none;
+.little-float-button {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    bottom: 40px;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 20000;
+    font-size: 100%;
+    color: white;
+    right: 10px;
 }
 
-.formView-detail table{
-    margin-bottom: 0px;
+.little-float-button.disabled {
+    background-color: gray;
 }
-.formView-detail .panel-body{
-    padding: 0px;
+
+.little-float-button:hover, .little-float-button:focus {
+    color: white;
 }
-#div_breadcrumbs{
-    background-color: #fff;
-    margin-bottom: 15px;
+
+.little-float-button .internal-float-button {
+    margin-top: 8px;
 }
-.panel-body .tformrow{
-    min-height: 35px;
+
+div > div.panel > .panel-body {
+    padding: 10px;
 }
-.fb-field-container{
-    padding-left: 8px;
-    padding-right: 8px;
-    min-height: 35px;
-}
-.fb-field-container.control-label{
-    padding-top:4px;
+
+.fb-field-container:after {
+    content: '';
+    display: block;
+    clear: both;
 }

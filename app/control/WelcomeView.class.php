@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WelcomeView
  *
@@ -17,21 +18,27 @@ class WelcomeView extends TPage
     function __construct()
     {
         parent::__construct();
-        
-        $html1 = new THtmlRenderer('app/resources/system_welcome_en.html');
-        $html2 = new THtmlRenderer('app/resources/system_welcome_pt.html');
 
-        // replace the main section variables
-        $html1->enableSection('main', array());
-        $html2->enableSection('main', array());
-        
-        $panel1 = new TPanelGroup('Welcome!');
-        $panel1->add($html1);
-        
-        $panel2 = new TPanelGroup('Bem-vindo!');
-        $panel2->add($html2);
-        
-        // add the template to the page
-        parent::add( TVBox::pack($panel1, $panel2) );
+
+
+        $pjbank = new PJBank(true);
+
+
+        $cliente = new PJCredencial("Exemplo Conta Digital",20867577000102,
+            "13032525","Rua Joaquim Vilac","509","Vila Teixeira","",
+            "Campinas","SP","19","987652345","api@pjbank.com.br",
+            "http://example.com.br");
+
+        $pjbank->doCredenciamento($cliente->prepare());
+
+
+        /**
+         * $webcam = new HWebcam('webcam',340,240);
+         * $entry = new TEntry('imagem');
+         * $entry->{id} = 'input_webcam';
+         * $webcam->setInput($entry);
+         *
+         * parent::add(TVBox::pack($webcam,$entry));
+         */
     }
 }

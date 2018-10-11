@@ -71,7 +71,7 @@ class SystemNotificationList extends TStandardList
             try
             {
                 TTransaction::open('permission');
-                $user = SystemUsers::find($object->system_user_id);
+                $user = SystemUser::find($object->system_user_id);
                 $name = $user->name;
                 TTransaction::close();
             }

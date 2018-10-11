@@ -14,7 +14,7 @@ use Exception;
 /**
  * Select Widget
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage form
  * @author     Pablo Dall'Oglio
@@ -95,6 +95,15 @@ class TSelect extends TField implements AdiantiWidgetInterface
     {
         $this->size = $width;
         $this->height = $height;
+    }
+    
+    /**
+     * Returns the size
+     * @return array(width, height)
+     */
+    public function getSize()
+    {
+        return array( $this->size, $this->height );
     }
     
     /**

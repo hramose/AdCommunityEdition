@@ -195,22 +195,50 @@ class HPageNavigation
         $last_page = min($pages, $max);
         
         $nav = new TElement('nav');
-        $nav->{'class'} = 'tpagenavigation';
         $nav-> align = 'center';
         
         $ul = new TElement('ul');
         $ul->{'class'} = 'pagination';
+          
         $nav->add($ul);
+        
+        // First
+        $parameters = $this->action->getParameters();
+        $parameters[$this->name.'offset']=0;
+        $parameters[$this->name.'limit']=$page_size;
+        $parameters[$this->name.'direction']=$this->direction;
+        $parameters[$this->name.'page']=1;
+        $parameters[$this->name.'first_page']=1;
+        $parameters[$this->name.'order']=$this->order;
+        (!empty($this->name))?($parameters = array_merge($_GET,$parameters)) : NULL;
+        $this->action->setParameters($parameters);
+        
+        $item = new TElement('li');
+        $item->{'class'} = 'page-item';
+        $link = new TElement('a');
+        $link->{'class'} = 'page-link glyphicon glyphicon-fast-backward';
+        $link->{'alt'} = 'First';
+        $link->{'aria-label'} = '';
+        //$link->{'popover'} = 'true';
+        //$link->{'popcontent'} = "<b>$registros</b> registros em <b>$pages</b> páginas<br><b>$page_size</b> registros por página<br>";
+        $link-> href      = $this->action->serialize();
+        $link-> generator = 'adianti';
+        
+        $ul->add($item);
+        $item->add($link);
         
         // previous
         $item = new TElement('li');
+        $item->{'class'} = 'page-item';
         $link = new TElement('a');
-        $span = new TElement('span');
+        $link->{'class'} = 'page-link glyphicon glyphicon-step-backward';
         $link->{'href'} = '#';
-        $link->{'aria-label'} = 'Previous';
+        $link->{'alt'} = 'Previous';
+        $link->{'aria-label'} = '';
+        
         $ul->add($item);
         $item->add($link);
-        $link->add($span);
+  
         
         if ($first_page > 1)
         {
@@ -226,21 +254,27 @@ class HPageNavigation
             
             $this->action->setParameters($parameters);
             
+            //$link->{'popover'} = 'true';
+            //$link->{'popcontent'} = "<b>$registros</b> registros em <b>$pages</b> páginas<br><b>$page_size</b> registros por página<br>";
+            
             $link-> href      = $this->action->serialize();
             $link-> generator = 'adianti';
-            $span->add('&laquo;');
+            $link->add('');
         }
         else
         {
-            $span->add('&nbsp;');
+            $item->{'class'} = 'page-item disabled';
+            $link->add(''); //Previous
+            $link->{'tabindex'} = '-1';
         }
         
         for ($n = $first_page; $n <= $last_page + $first_page -1; $n++)
         {
             $offset = ($n -1) * $page_size;
             $item = new TElement('li');
+            $item->{'class'} = 'page-item';
             $link = new TElement('a');
-            $span = new TElement('span');
+
            
             $parameters = $this->action->getParameters();
             $parameters[$this->name.'offset']=$offset;
@@ -259,8 +293,8 @@ class HPageNavigation
             
             $ul->add($item);
             $item->add($link);
-            $link->add($span);
-            $span->add($n);
+            $link->add($n);
+ 
             
             if($this->page == $n)
             {
@@ -271,22 +305,23 @@ class HPageNavigation
         for ($z=$n; $z<=10; $z++)
         {
             $item = new TElement('li');
+            $item->{'class'} = 'page-item disabled';
             $link = new TElement('a');
-            $span = new TElement('span');
-            $item->{'class'} = 'off';
+            $link->{'class'} = 'page-link';
+     
             $ul->add($item);
             $item->add($link);
-            $link->add($span);
-            $span->add($z);
+            $link->add($z);
         }
         
         $item = new TElement('li');
+        $item->{'class'} = 'page-item';
         $link = new TElement('a');
-        $span = new TElement('span');
-        $link->{'aria-label'} = "Next";
+        $link->{'class'} = 'page-link glyphicon glyphicon-step-forward';
+        $link->{'aria-label'} = "";
+        $link->{'alt'} = 'Next';
         $ul->add($item);
         $item->add($link);
-        $link->add($span);
         
         if ($pages > $max)
         {
@@ -305,15 +340,62 @@ class HPageNavigation
             
             $this->action->setParameters($parameters);
             
+            //$link->{'popover'} = 'true';
+            //$link->{'popcontent'} = "<b>$registros</b> registros em <b>$pages</b> páginas<br><b>$page_size</b> registros por página<br>";
+            
+            
             $link-> href      = $this->action->serialize();
             $link-> generator = 'adianti';
             
-            $span->add('&raquo;');
+            $link->add('');
         }
         else
         {
-            $span->add('&nbsp;');
+           $item->{'class'} = 'page-item disabled';
+            $link->add(''); //Next
+            $link->{'tabindex'} = '-1';
         }
+        
+        // Last
+        $parameters = $this->action->getParameters();
+        $parameters[$this->name.'offset']=floor($registros / $pages) * $pages;
+        $parameters[$this->name.'limit']=$page_size;
+        $parameters[$this->name.'direction']=$this->direction;
+        $parameters[$this->name.'page']=$pages;
+        $parameters[$this->name.'first_page']=1;
+        $parameters[$this->name.'order']=$this->order;
+        (!empty($this->name))?($parameters = array_merge($_GET,$parameters)) : NULL;
+        $this->action->setParameters($parameters);
+        
+        $item = new TElement('li');
+        $item->{'class'} = 'page-item';
+        $link = new TElement('a');
+        $link->{'class'} = 'page-link glyphicon glyphicon-fast-forward';
+        $link->{'alt'} = 'First';
+        $link->{'aria-label'} = '';
+        //$link->{'popover'} = 'true';
+        //$link->{'popcontent'} = "<b>$registros</b> registros em <b>$pages</b> páginas<br><b>$page_size</b> registros por página<br>";
+        $link-> href      = $this->action->serialize();
+        $link-> generator = 'adianti';
+        
+        $ul->add($item);
+        $item->add($link);
+        
+        $item = new TElement('li');
+        $item->{'class'} = 'page-item';
+        $link = new TElement('a');
+        $link->{'class'} = 'page-link glyphicon glyphicon-exclamation-sign';
+        $link->{'alt'} = 'First';
+        $link->{'aria-label'} = '';
+        $link->{'popover'} = 'true';
+        $link->{'popcontent'} = "<b>$registros</b> registros em <b>$pages</b> páginas<br><b>$page_size</b> registros por página<br>";
+        //$link-> href      = $this->action->serialize();
+        $link-> generator = 'adianti';
+        
+        $ul->add($item);
+        $item->add($link);
+
+        
         //Hdebug::debug($parameters);
         $nav->show();
     }

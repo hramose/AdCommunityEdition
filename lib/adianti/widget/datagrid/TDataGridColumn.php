@@ -6,7 +6,7 @@ use Adianti\Control\TAction;
 /**
  * Representes a DataGrid column
  *
- * @version    5.0
+ * @version    5.5
  * @package    widget
  * @subpackage datagrid
  * @author     Pablo Dall'Oglio
@@ -162,11 +162,17 @@ class TDataGridColumn
     /**
      * Define the action to be executed when
      * the user clicks over the column header
-     * @param $action   A TAction object
+     * @param $action     TAction object
+     * @param $parameters Action parameters
      */
-    public function setAction(TAction $action)
+    public function setAction(TAction $action, $parameters = null)
     {
         $this->action = $action;
+        
+        if ($parameters)
+        {
+            $this->action->setParameters($parameters);
+        }
     }
     
     /**

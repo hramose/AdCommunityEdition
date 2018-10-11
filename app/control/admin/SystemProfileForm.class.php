@@ -23,13 +23,16 @@ class SystemProfileForm extends TPage
         $name  = new TEntry('name');
         $login = new TEntry('login');
         $email = new TEntry('email');
+        $photo = new TFile('photo');
         $password1 = new TPassword('password1');
         $password2 = new TPassword('password2');
         $login->setEditable(FALSE);
+        $photo->setAllowedExtensions( ['jpg'] );
         
         $this->form->addQuickField( _t('Name'), $name, '80%', new TRequiredValidator );
         $this->form->addQuickField( _t('Login'), $login, '80%', new TRequiredValidator );
         $this->form->addQuickField( _t('Email'), $email, '80%', new TRequiredValidator );
+        $this->form->addQuickField( _t('Photo'), $photo, '80%' );
         $this->form->addQuickField( _t('Password'), $password1, '80%' );
         $this->form->addQuickField( _t('Password confirmation'), $password2, '80%' );
         
@@ -49,7 +52,7 @@ class SystemProfileForm extends TPage
         try
         {
             TTransaction::open('permission');
-            $login = SystemUsers::newFromLogin( TSession::getValue('login') );
+            $login = SystemUser::newFromLogin( TSession::getValue('login') );
             $this->form->setData($login);
             TTransaction::close();
         }
@@ -68,7 +71,7 @@ class SystemProfileForm extends TPage
             $object = $this->form->getData();
             
             TTransaction::open('permission');
-            $user = SystemUsers::newFromLogin( TSession::getValue('login') );
+            $user = SystemUser::newFromLogin( TSession::getValue('login') );
             $user->name = $object->name;
             $user->email = $object->email;
             
@@ -87,6 +90,19 @@ class SystemProfileForm extends TPage
             }
             
             $user->store();
+            
+            if ($object->photo)
+            {
+                $source_file   = 'tmp/'.$object->photo;
+                $target_file   = 'app/images/photos/' . TSession::getValue('login') . '.jpg';
+                $finfo         = new finfo(FILEINFO_MIME_TYPE);
+                
+                if (file_exists($source_file) AND $finfo->file($source_file) == 'image/jpeg')
+                {
+                    // move to the target directory
+                    rename($source_file, $target_file);
+                }
+            }
             
             $this->form->setData($object);
             

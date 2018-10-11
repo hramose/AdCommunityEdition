@@ -40,8 +40,8 @@ class SystemMessageFormView extends TPage
                         $array_object['checked_string'] = ($array_object['checked'] == 'Y' ? _t('Yes') : _t('No'));
                         
                         TTransaction::open('permission');
-                        $user = SystemUsers::find($array_object['system_user_id']);
-                        if ($user instanceof SystemUsers)
+                        $user = SystemUser::find($array_object['system_user_id']);
+                        if ($user instanceof SystemUser)
                         {
                             $array_object['user'] = $user->name . ' (' . $array_object['system_user_id'] . ')';
                         }

@@ -2,7 +2,7 @@
 /**
  * HTML Table writer
  *
- * @version    5.0
+ * @version    5.5
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
  * @license    http://www.adianti.com.br/framework-license
@@ -14,6 +14,7 @@ class TTableWriterHTML implements ITableWriter
     private $colcounter;
     private $table;
     private $currentRow;
+    private $footerCallback;
     
     /**
      * Constructor
@@ -40,6 +41,22 @@ class TTableWriterHTML implements ITableWriter
     public function getNativeWriter()
     {
         return $this->table;
+    }
+    
+    /**
+     * Set Header callback
+     */
+    public function setHeaderCallback( $callback )
+    {
+        call_user_func($callback, $this);
+    }
+    
+    /**
+     * Set Footer callback
+     */
+    public function setFooterCallback( $callback )
+    {
+        $this->footerCallback = $callback;
     }
     
     /**
@@ -125,6 +142,11 @@ class TTableWriterHTML implements ITableWriter
      */
     public function save($filename)
     {
+        if (is_callable($this->footerCallback))
+        {
+            call_user_func($this->footerCallback, $this);
+        }
+        
         ob_start();
         echo "<html>\n";
         echo "<style>\n";
@@ -143,4 +165,3 @@ class TTableWriterHTML implements ITableWriter
         return TRUE;
     }
 }
-?>

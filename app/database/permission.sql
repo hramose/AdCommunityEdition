@@ -41,10 +41,7 @@ INSERT INTO system_program VALUES(31,'System PHP Error','SystemPHPErrorLogView')
 INSERT INTO system_program VALUES(32,'System Database Browser','SystemDatabaseExplorer');
 INSERT INTO system_program VALUES(33,'System Table List','SystemTableList');
 INSERT INTO system_program VALUES(34,'System Data Browser','SystemDataBrowser');
-CREATE TABLE system_unit (
-    id INTEGER PRIMARY KEY NOT NULL,
-    name varchar(100));
-CREATE TABLE system_users (
+CREATE TABLE system_user (
     id INTEGER PRIMARY KEY NOT NULL,
     name varchar(100),
     login varchar(100),
@@ -52,13 +49,13 @@ CREATE TABLE system_users (
     email varchar(100),
     frontpage_id int, system_unit_id int references system_unit(id), active char(1),
     FOREIGN KEY(frontpage_id) REFERENCES system_program(id));
-INSERT INTO system_users VALUES(1,'Administrator','admin','21232f297a57a5a743894a0e4a801fc3','admin@admin.net',10,NULL,'Y');
-INSERT INTO system_users VALUES(2,'User','user','ee11cbb19052e40b07aac0ca060c23ee','user@user.net',7,NULL,'Y');
+INSERT INTO system_user VALUES(1,'Administrator','admin','21232f297a57a5a743894a0e4a801fc3','admin@admin.net',10,NULL,'Y');
+INSERT INTO system_user VALUES(2,'User','user','ee11cbb19052e40b07aac0ca060c23ee','user@user.net',7,NULL,'Y');
 CREATE TABLE system_user_group (
     id INTEGER PRIMARY KEY NOT NULL,
     system_user_id int,
     system_group_id int,
-    FOREIGN KEY(system_user_id) REFERENCES system_users(id),
+    FOREIGN KEY(system_user_id) REFERENCES system_user(id),
     FOREIGN KEY(system_group_id) REFERENCES system_group(id));
 INSERT INTO system_user_group VALUES(1,1,1);
 INSERT INTO system_user_group VALUES(2,2,2);
@@ -106,21 +103,24 @@ CREATE TABLE system_user_program (
     id INTEGER PRIMARY KEY NOT NULL,
     system_user_id int,
     system_program_id int,
-    FOREIGN KEY(system_user_id) REFERENCES system_users(id),
+    FOREIGN KEY(system_user_id) REFERENCES system_user(id),
     FOREIGN KEY(system_program_id) REFERENCES system_program(id));
 INSERT INTO system_user_program VALUES(1,2,7);
+CREATE TABLE system_unit (
+    id INTEGER PRIMARY KEY NOT NULL,
+    name varchar(100));
 CREATE TABLE system_preference (
     id text,
-    preference text
+    value text
 );
 CREATE TABLE system_user_unit (
     id INTEGER PRIMARY KEY NOT NULL,
     system_user_id int,
     system_unit_id int,
-    FOREIGN KEY(system_user_id) REFERENCES system_users(id),
+    FOREIGN KEY(system_user_id) REFERENCES system_user(id),
     FOREIGN KEY(system_unit_id) REFERENCES system_unit(id));
 
-CREATE INDEX sys_user_program_idx ON system_users(frontpage_id);
+CREATE INDEX sys_user_program_idx ON system_user(frontpage_id);
 CREATE INDEX sys_user_group_group_idx ON system_user_group(system_group_id);
 CREATE INDEX sys_user_group_user_idx ON system_user_group(system_user_id);
 CREATE INDEX sys_group_program_program_idx ON system_group_program(system_program_id);

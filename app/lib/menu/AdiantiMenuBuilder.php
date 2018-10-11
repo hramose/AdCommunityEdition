@@ -35,6 +35,18 @@ class AdiantiMenuBuilder
                 $menu_string = ob_get_clean();
                 return $menu_string;
                 break;
+               
+            case 'indev':
+                ob_start();
+                $callback = array('SystemPermission', 'checkPermission');
+                $xml = new SimpleXMLElement(file_get_contents('menu.xml'));
+                $menu = new HTMenu($xml, $callback);
+                $menu->class = 'nav navbar-nav ml-auto';
+                $menu->id    = 'navbar-indev';
+                $menu->show();
+                $menu_string = ob_get_clean();
+                return $menu_string;
+                break;
             default:
                 ob_start();
                 $callback = array('SystemPermission', 'checkPermission');
