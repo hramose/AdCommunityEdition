@@ -1,11 +1,11 @@
-
-const App = new Vue({
-   el: '#app',
-   data: {
-   contador: 0
- }
-});
- 
-setInterval(function() {
-    App.contador += 1;
-}, 1000);
+new Vue({
+    el: '#app',
+    data: {
+    contador: 0
+  },
+  mounted()  {
+     setInterval(()=> {
+        this.contador += 1;
+     }, 1000);
+   }
+ })
