@@ -20,25 +20,6 @@ class WelcomeView extends TPage
         parent::__construct();
 
 
-
-        $pjbank = new PJBank(true);
-
-
-        $cliente = new PJCredencial("Exemplo Conta Digital",20867577000102,
-            "13032525","Rua Joaquim Vilac","509","Vila Teixeira","",
-            "Campinas","SP","19","987652345","api@pjbank.com.br",
-            "http://example.com.br");
-
-        $pjbank->doCredenciamento($cliente->prepare());
-
-
-        /**
-         * $webcam = new HWebcam('webcam',340,240);
-         * $entry = new TEntry('imagem');
-         * $entry->{id} = 'input_webcam';
-         * $webcam->setInput($entry);
-         *
-         * parent::add(TVBox::pack($webcam,$entry));
-         */
+parent::add("Template Bootstrap 4");
     }
 }
