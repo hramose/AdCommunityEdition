@@ -19,7 +19,10 @@ class WelcomeView extends TPage
     {
         parent::__construct();
 
+$html = new THtmlRenderer('app/view/welcome.html');
 
-parent::add("Template Bootstrap 4");
+$html->enableSection('main');
+
+parent::add($html);
     }
 }
