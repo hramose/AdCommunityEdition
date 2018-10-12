@@ -19,7 +19,7 @@ class WelcomeView extends TPage
     {
         parent::__construct();
 
-$html = new THtmlRenderer('app/view/welcome.html');
+$html = new THtmlRenderer('app/view/preact.html');
 
 $html->enableSection('main');
 

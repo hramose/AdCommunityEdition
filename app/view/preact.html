@@ -1,0 +1,33 @@
+<!--[main]-->
+<script>
+const { h, Component } = preact;
+const hx = hyperx(h);
+
+
+const App = () => hx`
+	<div id="app">
+		${h(Demo)}
+	</div>
+`;
+
+class Demo extends Component {
+	constructor(props, context) {
+		super(props, context);
+		this.state = { n: 0 };
+		this.handleClick = () => {
+			this.setState({ n: this.state.n + 1 })
+		};
+	}
+	render(props, state) {
+		return hx`
+			<div>
+				<h1>clicked ${state.n} times</h1>
+				<button onClick=${this.handleClick}>click me!</button>
+			</div>
+		`;
+	}
+}
+
+preact.render(h(App), document.body);
+</script>
+<!--[/main]-->
