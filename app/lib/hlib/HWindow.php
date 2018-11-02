@@ -1,6 +1,6 @@
 <?php
 
-class HWindow extends TPage
+class HWindow extends HPage
 {
     private $wrapper;
     
@@ -128,4 +128,6 @@ class HWindow extends TPage
     {
         HJQueryDialog::closeAll();
     }
+    
+
 }

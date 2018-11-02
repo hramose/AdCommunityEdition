@@ -13,7 +13,15 @@
         "firebase/php-jwt": "^5.0",
     "pablodalloglio/ole": "dev-master",
     "pablodalloglio/spreadsheet_excel_writer": "dev-master",
-    "guzzlehttp/guzzle": "~6.0",
-    "webonyx/graphql-php": "^0.12.6"
-    }
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.3.0"
+  },
+  "scripts" : {
+        "phpunit" : "./vendor/bin/phpunit --bootstrap init.php  --testdox --filter",
+        "all" : "./vendor/bin/phpunit --bootstrap init.php  --testdox "
+
+        }
+
 }
