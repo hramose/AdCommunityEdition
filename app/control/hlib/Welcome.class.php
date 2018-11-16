@@ -3,23 +3,21 @@
 
 class Welcome extends HPage
 {
-    /**
-     * Class constructor
-     * Creates the page
-     */
-    function __construct()
-    {
-        parent::__construct();
 
-$html = new THtmlRenderer('app/view/welcome.html');
-//$html = new THtmlRenderer('app/view/preact.html');
+public function __construct(){
+parent::__construct();
+  
+  parent::add(new TLabel("Indev Web"));
+  
+  }  
 
-$html->enableSection('main');
-
-parent::add($html);
-    }
-    
     public function onAfterLoad($params){
-    echo $params['key'];
+    
+    echo "Antes da pagina ser carregada ".$params['key'];
 }
+
+    public function onBeforeLoad($params){
+    
+        echo " apos a pagina ser carregada ".$params['key'];
+    }
 }

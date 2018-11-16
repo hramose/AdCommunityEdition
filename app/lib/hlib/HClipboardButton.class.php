@@ -1,15 +1,5 @@
 <?php
-//namespace Adianti\Widget\Form;
 
-use Adianti\Widget\Form\AdiantiWidgetInterface;
-use Adianti\Core\AdiantiCoreTranslator;
-use Adianti\Widget\Base\TElement;
-use Adianti\Widget\Base\TScript;
-use Adianti\Widget\Form\TField;
-use Adianti\Widget\Form\TLabel;
-use Adianti\Widget\Util\TImage;
-
-//use Exception;
 
 class HClipboardButton extends TField implements AdiantiWidgetInterface
 {

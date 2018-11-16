@@ -92,11 +92,15 @@
       </menuitem>
     </menu>
   </menuitem>
-  <menuitem label="Examples">
+  <menuitem label="HLib">
     <menu>
       <menuitem label="Vuejs View">
         <icon/>
         <action>AdVue</action>
+      </menuitem>
+      <menuitem label="Welcome Hlib">
+        <icon>fa:android fa:fw</icon>
+        <action>WelcomeHlib</action>
       </menuitem>
     </menu>
   </menuitem>

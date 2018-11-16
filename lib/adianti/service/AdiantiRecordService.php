@@ -150,7 +150,8 @@ class AdiantiRecordService
         TTransaction::close();
         return $return;
     }
-    
+
+
     /**
      * Handle HTTP Request and dispatch
      * @param $param HTTP POST and php input vars
