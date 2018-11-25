@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu>
-  <menuitem label="todos">
-    <icon>fa:xing-square fa-fw #c4b11d</icon>
-    <menu>
-      <menuitem label="exames">
-        <icon>fa:circle-o fa-fw </icon>
-        <action>CfcExamesPraticosCalendarFormView</action>
-      </menuitem>
-    </menu>
-  </menuitem>
   <menuitem label="_t{Administration}">
     <icon>fa:university fa-fw</icon>
     <menu>
@@ -89,18 +80,6 @@
       <menuitem label="_t{PHP Log}">
         <icon>fa:exclamation-triangle fa-fw</icon>
         <action>SystemPHPErrorLogView</action>
-      </menuitem>
-    </menu>
-  </menuitem>
-  <menuitem label="HLib">
-    <menu>
-      <menuitem label="Vuejs View">
-        <icon/>
-        <action>AdVue</action>
-      </menuitem>
-      <menuitem label="Welcome Hlib">
-        <icon>fa:android fa:fw</icon>
-        <action>WelcomeHlib</action>
       </menuitem>
     </menu>
   </menuitem>

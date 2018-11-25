@@ -19,11 +19,19 @@ class WelcomeView extends TPage
     {
         parent::__construct();
 
-$html = new THtmlRenderer('app/view/welcome.html');
-//$html = new THtmlRenderer('app/view/preact.html');
+$html = new THtmlRenderer('app/resources/system_welcome_en.html');
+$html2 = new THtmlRenderer('app/resources/system_welcome_pt.html');
+$html3 = new THtmlRenderer('app/resources/system_welcome_es.html');
 
 $html->enableSection('main');
+$html2->enableSection('main');
+$html3->enableSection('main');
 
-parent::add($html);
+$vbox = new TVBox();
+$vbox->add($html);
+$vbox->add($html2);
+$vbox->add($html3);
+
+parent::add($vbox);
     }
 }
