@@ -6,7 +6,7 @@ Para pegar a token do usuario
 $.ajax({ 
 type: 'POST', 
 url: 'www.meusistema.local/rest.php', 
-data: { 
+{ 
 "user": "admin", 
 "password": "admin",
 }, 
@@ -24,7 +24,7 @@ Usando, aposter a token
 $.ajax({ 
 type: 'POST', 
 url: 'www.meusistema.local/rest.php', 
-    data: { 
+ {
         "class":"Home",
         "method":"index",
         "name":"Alexandre souza" // parametro
@@ -49,14 +49,12 @@ url: 'www.meusistema.local/rest.php',
 <?php
 
 
-class Home extends TPage
+class Home extends AdiantiRecordService
 {
+    const DATABASE      = 'janafest';
+    const ACTIVE_RECORD = 'Eventos';
 
-    private $res;
-    /**
-     * Class constructor
-     * Creates the page
-     */
+
     function __construct()
     {
         parent::__construct();
@@ -64,11 +62,11 @@ class Home extends TPage
 
     }
     
-    public function index(){
+    public function index($param){
     
      
       
-    return json_encode(array('data'=> $this->res->get('user')));
+    return $param['user'];
     }
 }
 
